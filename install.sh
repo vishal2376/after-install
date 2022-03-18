@@ -4,9 +4,12 @@
 
 echo "\n----------Updating system----------\n"
 sudo apt-get update
+sudo apt-get upgrade -y
+
 
 echo "\n----------Fixing Dual Boot Time----------\n"
 timedatectl set-local-rtc 1
+
 
 
 ##############################################
@@ -97,4 +100,4 @@ echo "\n----------Downloading scripts----------\n"
 #pirokit
 
 echo "\n----------Giving Permission to scripts----------\n"
-#sudo chmod +x /usr/local/bin
+sudo chmod +x /usr/local/bin
