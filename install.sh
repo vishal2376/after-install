@@ -56,6 +56,10 @@ echo "\n----------Installing editing & recording tools----------\n"
 sudo apt-get install kdenlive obs-studio gimp audacity -y
 
 
+echo "\n----------Installing system tweaking tools----------\n"
+sudo apt-get install gnome-tweaks gnome-shell gnome-shell-common -y
+
+
 
 ##############################
 # Installing Tools from snap #
