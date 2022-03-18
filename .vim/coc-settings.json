@@ -1,0 +1,7 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "*"
+  ],
+  //"clangd.path": "/home/vishal/.config/coc/extensions/node_modules/coc-clangd"
+  "clangd.path": "/usr/bin/clangd"
+}
