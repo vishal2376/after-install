@@ -103,7 +103,7 @@ echo "\n----------Copying fonts & system extensions----------\n"
 # Installing & Copying Scripts #
 ################################
 echo "\n\n----------Installing scripts dependencies----------\n"
-sudo apt-get install jq -y
+sudo apt-get install jq dmenu xclip -y
 pip install pywal
 
 echo "\n----------Copying scripts----------\n"
@@ -111,3 +111,10 @@ echo "\n----------Copying scripts----------\n"
 
 echo "\n----------Giving Permission to scripts----------\n"
 sudo chmod +x /usr/local/bin
+
+
+
+########
+# TODO #
+########
+echo "\n\n----------[TODO] : Copy wallpapers to '.local\share\wallheaven'----------\n"
