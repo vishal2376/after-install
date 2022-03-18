@@ -81,8 +81,7 @@ echo "\n\n----------Creating Backup of [.config]----------\n"
 cd ~
 tar -cvzf old_config_backup.tar .config
 cd -
-echo "\n\n [+] Config. Backup Created . \n Press Enter to continue"
-read
+echo "\n\n [+] Config. Backup Created.\n"
 
 echo "\n----------Copying new configurations----------\n"
 #cp -vr .config ~
@@ -91,13 +90,12 @@ echo "\n----------Copying new configurations----------\n"
 ################################
 # Installing & Copying Scripts #
 ################################
-echo "\n\n----------Copying scripts----------\n"
-#sudo cp -r bin /usr/local/
+echo "\n\n----------Installing scripts dependencies----------\n"
+sudo apt-get install jq -y
+pip install pywal
 
-echo "\n----------Downloading scripts----------\n"
-#ani-cli
-#notflix
-#pirokit
+echo "\n----------Copying scripts----------\n"
+#sudo cp -vr scripts/* /usr/local/bin/
 
 echo "\n----------Giving Permission to scripts----------\n"
 sudo chmod +x /usr/local/bin
