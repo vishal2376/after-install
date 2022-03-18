@@ -41,7 +41,7 @@ sudo apt-get install brave-browser-nightly -y
 #############################
 
 echo "\n\n----------Installing basic tools----------\n"
-sudo apt-get install sed git jq grep openssl aria2 imwheel -y
+sudo apt-get install sed git jq grep openssl vim aria2 imwheel -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
@@ -97,6 +97,9 @@ echo "\n----------Copying Themes----------\n"
 echo "\n----------Copying fonts & system extensions----------\n"
 #cp -vr .local ~
 
+echo "\n----------Copying *rc files----------\n"
+#cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile .vimrc ~
+#cp -vr .vim ~
 
 
 ################################
