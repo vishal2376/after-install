@@ -1,0 +1,22 @@
+{
+	"cmd" : ["g++ -std=c++17 $file_name -o $file_base_name && timeout 4s ./$file_base_name<$project_path/input.txt>output.txt && rm $file_base_name"],
+	"selector" : "source.cpp",
+	"shell": true,
+	"working_dir" : "$file_path",
+
+	"variants":[
+		{
+			"name": "Debug",
+			"cmd" : ["g++ -std=c++17 -Wall -Wextra $file_name -o $file_base_name && timeout 4s ./$file_base_name<$project_path/input.txt>output.txt 2>$project_path/debug.txt && rm $file_base_name"],
+		},
+		{
+			"name": "Input",
+			"cmd" : ["g++ -std=c++17 $file_name -o $file_base_name &&./$file_base_name<$project_path/input.txt"], 
+		},
+		{
+			"name": "Terminal",
+			"cmd" : ["gnome-terminal -e 'bash -c \"g++ $file_name -o $file_base_name && ./$file_base_name;echo;echo Press any Key to continue...;read line; rm $file_base_name\"' 2>/dev/null"], 
+		},
+		
+	]
+}

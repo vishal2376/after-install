@@ -1,0 +1,16 @@
+{
+	/*"font_size": 19,*/
+	"show_full_path": false,
+	"theme": "Default Dark.sublime-theme",
+	"ignored_packages":
+	[
+		"All Autocomplete",
+		"Markdown",
+		"Vintage",
+	],
+	"font_face": "JetBrains Mono Regular",
+	"mini_diff": false,
+	"color_scheme": "Packages/One Dark Material - Theme/schemes/OneDark.tmTheme",
+	"auto_complete": true,
+	"font_size": 19,
+}

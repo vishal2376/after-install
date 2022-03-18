@@ -1,0 +1,12 @@
+[
+	{ "keys": ["alt+shift+t"], "command": "transpose" },
+	{ "keys": ["ctrl+alt+p"], "command": "prompt_select_workspace" },
+	{"keys": ["ctrl+alt+n"], "command": "new_window" },
+	{ "keys": ["ctrl+shift+n"], "command": "advanced_new_file_new"},
+	{ "keys": ["alt+b"], "command": "cancel_build" },
+	{ "keys": ["alt+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+	{ "keys": ["alt+right"], "command": "focus_neighboring_group" },
+	{ "keys": ["ctrl+k", "alt+left"], "command": "move", "args": {"by": "subwords", "forward": false} },
+	{ "keys": ["ctrl+k", "alt+right"], "command": "move", "args": {"by": "subword_ends", "forward": true} }
+	
+]

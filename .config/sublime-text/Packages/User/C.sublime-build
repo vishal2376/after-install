@@ -1,0 +1,26 @@
+{
+	"cmd" : ["gcc $file_name -o $file_base_name && ./$file_base_name && rm $file_base_name"], 
+	"selector" : "source.c",
+	"shell": true,
+	"working_dir" : "$file_path",
+	
+	"variants": 
+	[
+		{
+			"name": "Multiple Files",
+			"cmd" : ["gcc *.c *.h -o $file_base_name && ./$file_base_name && rm $file_base_name"], 
+		},
+		{
+			"name": "Terminal",
+			"cmd" : ["gnome-terminal -e 'bash -c \"gcc $file_name -o $file_base_name && ./$file_base_name;echo;echo Press any Key to continue...;read line; rm $file_base_name\"' 2>/dev/null"], 
+		},
+		{
+			"name": "Input-Output",
+			"cmd" : ["gcc $file_name -o $file_base_name && ./$file_base_name<$project_path/input.txt>$project_path/output.txt && rm $file_base_name"],
+		},
+		{
+			"name":"Makefile",
+			"cmd":["make"]
+		}
+	]
+}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while read file
+do
+	case "$1" in 
+		"w") change-wallpaper $file ;;
+		"c") cat $file | xclip -sel c -t image/png ;;
+		"r") rm $file;
+	esac
+done

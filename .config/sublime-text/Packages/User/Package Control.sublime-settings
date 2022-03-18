@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Anaconda",
+		"ayu",
+		"EasyClangComplete",
+		"Emoji",
+		"FileIcons",
+		"GitGutter",
+		"Markdown Extended",
+		"MarkdownEditing",
+		"MarkdownLivePreview",
+		"One Dark Material - Theme",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeAStyleFormatter",
+		"Sublimerge 3",
+		"Terminal",
+	],
+}
