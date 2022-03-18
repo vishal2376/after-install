@@ -41,7 +41,7 @@ sudo apt-get install brave-browser-nightly -y
 #############################
 
 echo "\n\n----------Installing basic tools----------\n"
-sudo apt-get install sed git jq grep openssl vim aria2 imwheel -y
+sudo apt-get install sed git jq grep openssl vim aria2 imwheel coreutils coreutils fzf xdg-utils -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
@@ -83,9 +83,9 @@ sudo snap install nodejs --classic
 # Copying configuration files #
 ###############################
 echo "\n\n----------Creating Backup of .config folder----------\n"
-cd ~
-tar -cvzf old_config_backup.tar .config
-cd -
+# cd ~
+# tar -cvzf old_config_backup.tar .config
+# cd -
 echo "\n\n [+] Config. Backup Created.\n"
 
 echo "\n----------Copying new configurations----------\n"
@@ -107,14 +107,18 @@ echo "\n----------Copying *rc files----------\n"
 # Installing & Copying Scripts #
 ################################
 echo "\n\n----------Installing scripts dependencies----------\n"
-sudo apt-get install jq dmenu xclip -y
+sudo apt-get install jq pup dmenu xclip -y
 pip install pywal
 
 echo "\n----------Copying scripts----------\n"
 #sudo cp -vr scripts/* /usr/local/bin/
 
 echo "\n----------Giving Permission to scripts----------\n"
-sudo chmod +x /usr/local/bin
+sudo chmod -R +x /usr/local/bin
+
+
+echo "\n\n----------Removing unwanted tools----------\n"
+sudo apt-get autoremove
 
 
 
