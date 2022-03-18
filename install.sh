@@ -125,7 +125,9 @@ sudo apt-get autoremove
 ########
 # TODO #
 ########
-echo "\n\n----------[TODO] : Copy wallpapers to '.local\share\wallheaven'----------\n"
-echo "\n----------[TODO] : Install vim plugins [:PlugInstall]----------\n"
-echo "\n----------[TODO] : Configure github ssh keys----------\n"
-echo "\n----------[TODO] : Configure Brave browser Sync----------\n"
+echo "\n\n----------[TODO] : Copy wallpapers to '.local\share\wallheaven'----------"
+echo "\n----------[TODO] : Install vim plugins [:PlugInstall]----------"
+echo "\n----------[TODO] : Configure github ssh keys----------"
+echo "\n----------[TODO] : Configure Brave browser Sync----------"
+echo "\n----------[TODO] : Set themes, fonts , icons ,etc. using Tweak tool----------"
+echo "\n----------[TODO] : Set custom shortcut keys(see 'shortcut' folder for reference)----------"
