@@ -1,0 +1,135 @@
+/* square area */
+
+.draw-on-your-screen .draw-on-your-screen-square-area {
+    outline: 2px solid rgba(255, 0, 0, 0.7);
+}
+
+.draw-on-your-screen:insensitive .draw-on-your-screen-square-area {
+    outline: none;
+}
+
+ /* "Ctrl + F1" on-screen-display */
+ 
+.draw-on-your-screen-helper {
+    margin: 0px;
+}
+
+.draw-on-your-screen-helper > StBoxLayout {
+    margin: 8px;
+    margin-right: 16px;
+    spacing: 0.5em;
+}
+
+.draw-on-your-screen-helper > StBoxLayout StBoxLayout {
+    spacing: 7em;
+}
+
+.draw-on-your-screen-helper > StBoxLayout StBoxLayout StLabel {
+    text-align: right;
+    font-weight: normal;
+}
+
+.draw-on-your-screen-helper-separator {
+    min-height: 0.6em;
+}
+
+/* context menu */
+
+.draw-on-your-screen-menu {
+   font-size: 0.97em; /* default: 1em */
+   min-width: 21em; /* like the aggregate menu */
+}
+
+.draw-on-your-screen-menu .popup-menu-item {
+    padding-top: .3em; /* default: .4em */
+    padding-bottom: .3em;
+}
+
+.draw-on-your-screen-menu .popup-menu-item > .popup-menu-icon {
+    icon-size: 1em; /* default: 1.09 */
+    padding-top: 0.03em;
+}
+
+/* max size for uncontrolled contents (font, image and drawing names) */
+.draw-on-your-screen-menu-ellipsized {
+    max-width: 21em;
+}
+
+.draw-on-your-screen-menu .toggle-switch {
+    height: 1.35em; /* default: 22px */
+}
+
+.draw-on-your-screen-menu-separator-item {
+    margin-top: 0;
+    padding-top: 0.14em;
+    padding-bottom: 0.14em;
+}
+
+.draw-on-your-screen-menu-separator-item StLabel {
+    font-size: 0;
+}
+
+.draw-on-your-screen-menu-separator-item .popup-separator-menu-item {
+    margin-top: 0.2em; /* default 6px */
+    margin-bottom: 0.2em; /* default 6px */
+}
+
+.draw-on-your-screen-menu-separator-item .popup-separator-menu-item-separator {
+    background-color: transparent;
+}
+
+.draw-on-your-screen-menu-thin-separator-item .popup-separator-menu-item-separator {
+    margin-top: 0;
+}
+
+.draw-on-your-screen-menu-destructive-button:hover {
+    color: #e01b24; /* upstream destructive color, light: #e01b24, dark: #b2161d */
+}
+
+/* override .button upstream style class */
+.draw-on-your-screen-menu-action-button {
+    min-height: 0;
+    min-width: 0;
+    border-radius: 32px;
+    padding: 12px;
+}
+
+.draw-on-your-screen-menu-action-button > StIcon {
+    icon-size: 1em;
+}
+
+.draw-on-your-screen-menu-slider-label {
+    min-width: 3em;
+    text-align: right;
+}
+
+.draw-on-your-screen-menu-entry-item {
+    padding-right: 1.15em; /* default 1.75em */
+    spacing: 0; /* default 12px */
+}
+
+.draw-on-your-screen-menu-entry {
+    border: none;
+    border-radius: 3px;
+    padding: 0.35em 0.57em;
+    width: 10em;
+}
+
+.draw-on-your-screen-menu-entry-error {
+    color: #f57900; /* upstream warning_color */
+}
+
+.draw-on-your-screen-menu-entry:focus {
+    padding: 0.35em 0.57em;
+}
+
+/* override .button upstream style class */
+.draw-on-your-screen-menu-inline-button {
+    min-height: 1px;
+    padding: 2px 4px; /* default 3px 24px */
+}
+
+.draw-on-your-screen-menu-inline-button .popup-menu-icon {
+    icon-size: 0.85em; /* default 1.09 */
+}
+

@@ -1,0 +1,150 @@
+v11 - February 2021
+===================
+
+* GS 40 compatibility (40.beta)
+* Gtk4 port (preferences)
+* Toggle animations (background, grid and square area)
+* Multi-line text elements
+* Start a new line with "Enter" (text tool)
+* Add "centered" text alignment
+* Convenient marks for rotation and stretch transformations
+
+v10 - October 2020
+==================
+
+* Fix multi-monitor support #52
+
+v9 - October 2020
+=================
+
+* Split the drawing area in several layers (performance)
+* Start a new line with "Shift + Enter" (text tool)
+
+v8.1 - October 2020
+===================
+
+* Fix unsanitized GType names #46
+* Quick free drawings are smoother #45
+* Transformations are undoable/redoable
+
+v8 - September 2020
+===================
+
+Nothing.
+
+v7 - September 2020
+===================
+
+* Can import GIMP palettes.
+* Can color SVG images.
+* Integrate color picker (GS buit-in or Color Picker extension).
+
+v6.4 - September 2020
+=====================
+
+* Prepare GS 3.38 compatibility.
+* Add tooltips to sub-menu buttons also.
+* Fix drawing directory monitoring when it does not exist yet.
+* Fix text entry / ibus candidate popup position.
+
+v6.3 - September 2020
+=====================
+
+* Replace user stylesheet with proper drawing settings
+* Multi-palettes
+* Possibility to add insertable images from the clipboard
+* Image directory is configurable
+* Thumbnails in "Open drawing" sub-menu
+* Drawings can be directly inserted as an image.
+* Add a lot of icons in the menu and the OSD notifications
+* Group menu items at the bottom
+* Add tooltips to menu buttons
+* New "Persistent over toggles' setting #42
+
+v6.2 - August 2020
+==================
+
+* Show the text entry when ibusCandidatePopup is used
+* Regroup first menu items
+* Center grid overlay
+* Image shape
+* Extend font family choices
+* Fix sub-menu scroll view adjustment
+
+v6.1 - June 2020
+================
+
+* Fix empty media-keys settings case #28
+* Fix label color in OSD and menu #31
+* Fix OSD width
+* Fix "Hide panel and dock"
+* Small menu on small monitor
+* Start a new text line with the `Enter` key #30
+* IBus inputs #29 #34
+* Non-latin and emoji characters rendered
+* GS keyboard is now available to type text
+* Grid overlay
+* Polygon and polyline shapes
+* Move, resize and mirror tools
+* Fill rule and text alignment style attributes
+* An optional fourth control point for Bézier curves
+* Keybinding to toggle modeless/modal #6 #9 #20 #24 #33
+  (ungrabs keyboard and mouse while drawing remains at the top)
+* Attributes are now persistent through drawing mode toggling #27
+
+v6 - March 2020
+===============
+
+* GS 3.36 compatibility
+
+v5.1 - March 2020
+=================
+
+* Add "Open" and "Save drawing"
+* Change some keyboard shortcuts
+* Replace "smoothed stroke" preference with `Ctrl` key modifier
+* Add `space` key modifier to ignore pointer movement #20
+* User style is now stored in user data directory (`user.css`)
+* Customizable square area size #22
+
+v5 - December 2019
+==================
+
+* Improve pointer cursor
+* Add 3.24 version as supported
+* Use maxLevel in line-width OSD
+* Small fix with text shape that displayed keybindings
+
+
+v4.1 - October 2019
+===================
+
+* GS 3.34 compatibility
+* Create drawing menu on demand
+* Allow 0 px line width because stroke lines cannot have color with some transparency
+
+
+v4 - April 2019
+===============
+
+* Add drawing menu
+* Add panel indicator
+* Prefs to disable indicator and notifications
+* Change middle click action
+
+v3 - March 2019
+===============
+
+* Fix area container integration #1
+* Add persistence
+
+v2 - March 2019
+===============
+
+* Add transformations
+* Add square area
+
+v1 - March 2019
+===============
+
+* Initial release

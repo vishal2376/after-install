@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<application-state>
+  <context id="">
+    <application id="gnome-control-center.desktop" score="432" last-seen="1647414581"/>
+    <application id="unityhub.desktop" score="552" last-seen="1647403241"/>
+    <application id="xdg-desktop-portal-gtk.desktop" score="0" last-seen="1647254993"/>
+    <application id="blender_blender.desktop" score="3239" last-seen="1647270023"/>
+    <application id="sublime_text.desktop" score="5429" last-seen="1647597531"/>
+    <application id="libreoffice-impress.desktop" score="2" last-seen="1647582165"/>
+    <application id="org.gnome.tweaks.desktop" score="283" last-seen="1647521309"/>
+    <application id="jetbrains-pycharm.desktop" score="625" last-seen="1647092374"/>
+    <application id="software-properties-gtk.desktop" score="71" last-seen="1647509276"/>
+    <application id="ocs-url.desktop" score="11" last-seen="1647179808"/>
+    <application id="sxiv.desktop" score="59" last-seen="1647582426"/>
+    <application id="org.gnome.eog.desktop" score="60" last-seen="1647578362"/>
+    <application id="pdfchain.desktop" score="23" last-seen="1647073818"/>
+    <application id="gitkraken_gitkraken.desktop" score="286" last-seen="1647497546"/>
+    <application id="org.gnome.Software.desktop" score="3" last-seen="1647261151"/>
+    <application id="firefox.desktop" score="321" last-seen="1647244150"/>
+    <application id="y-ppa-manager.desktop" score="4" last-seen="1647328231"/>
+    <application id="gnome-initial-setup.desktop" score="306781966.5" last-seen="1646366328"/>
+    <application id="brave-browser-nightly.desktop" score="5772" last-seen="1647583384"/>
+    <application id="org.gnome.Extensions.desktop" score="235" last-seen="1647326896"/>
+    <application id="libreoffice-writer.desktop" score="5" last-seen="1647581799"/>
+    <application id="jetbrains-rider.desktop" score="977" last-seen="1647406563"/>
+    <application id="org.gnome.Terminal.desktop" score="5669" last-seen="1647597026"/>
+    <application id="org.gnome.Shell.Extensions.desktop" score="26" last-seen="1647348666"/>
+    <application id="discord_discord.desktop" score="1252" last-seen="1647526250"/>
+    <application id="whatsapp-for-linux_whatsapp-for-linux.desktop" score="24" last-seen="1647336219"/>
+    <application id="org.gnome.DiskUtility.desktop" score="62" last-seen="1647092670"/>
+    <application id="org.gnome.Nautilus.desktop" score="737" last-seen="1647597541"/>
+    <application id="com.obsproject.Studio.desktop" score="43" last-seen="1647354131"/>
+    <application id="org.gnome.FileRoller.desktop" score="19" last-seen="1647513193"/>
+    <application id="org.gnome.Evince.desktop" score="1465" last-seen="1647255774"/>
+    <application id="update-manager.desktop" score="18" last-seen="1647247112"/>
+    <application id="telegram-desktop_telegram-desktop.desktop" score="3073" last-seen="1647527087"/>
+    <application id="libreoffice-calc.desktop" score="80" last-seen="1647582399"/>
+    <application id="gimp.desktop" score="573" last-seen="1647067681"/>
+    <application id="org.gnome.baobab.desktop" score="106" last-seen="1647494832"/>
+    <application id="snap-store_ubuntu-software.desktop" score="1" last-seen="1647493742"/>
+  </context>
+</application-state>
