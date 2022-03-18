@@ -1,3 +1,4 @@
 {
-	"python_interpreter": "python3"
+	"python_interpreter": "python3",
+	"anaconda_linting": false,
 }
