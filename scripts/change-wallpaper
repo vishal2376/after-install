@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	wallpaper=$(find $HOME/.local/share/wallhaven -type f | shuf -n 1)
+elif echo "$1" | grep -q "/"; then
+	wallpaper="$1"
+else
+	wallpaper="$HOME/.local/share/wallhaven/$1"
+fi
+
+#set wallpaper
+gsettings set org.gnome.desktop.background picture-uri $wallpaper
+
+#delete old cached themes
+wal -c
+
+#generate new theme
+wal -i $wallpaper
+
+#generate telegram theme
+~/.telegram-palette-gen/telegram-palette-gen --wal

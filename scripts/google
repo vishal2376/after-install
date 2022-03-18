@@ -1,0 +1,11 @@
+#!/bin/bash
+
+query=$(: | dmenu -fn 'JetBrains Mono:size=14' -p "Search : " | tr ' ' '+' | head -n 1) 
+
+if [ "$query" == "" ]
+then
+exit 0
+fi
+brave-browser "https://www.google.com/search?q=$query"
+exit 0
+
