@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+url=$(: | dmenu -fn 'JetBrains Mono:size=14' -p "Enter codeforces link : ") 
+
+if [ -z "$url" ]; then 
+    exit 0
+fi
+
+contestID=$(echo $url | awk -F '/' '{print $6}')
+problemID=$(echo $url | awk -F '/' '{print $7}')
+
+sol_url="https://codeforces.com/problemset/status/$contestID/problem/$problemID"
+
+brave-browser $sol_url
+exit 0
