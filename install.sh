@@ -44,7 +44,7 @@ echo "\n\n----------Installing basic tools----------\n"
 sudo apt-get install sed git jq grep openssl aria2 imwheel -y
 
 echo "\n----------Installing programming tools----------\n"
-sudo apt-get install g++ python3 python3-pip -y
+sudo apt-get install g++ clang python3 python3-pip -y
 
 echo "\n----------Installing multimedia tools----------\n"
 sudo apt-get install ffmpeg mpv sxiv gscan2pdf pulseaudio  -y
@@ -71,13 +71,14 @@ sudo snap install mailspring
 echo "\n----------Installing Development Apps----------\n"
 sudo snap install gitkraken --classic
 sudo snap install blender --classic
+sudo snap install nodejs --classic
 
 
 
 ###############################
 # Copying configuration files #
 ###############################
-echo "\n\n----------Creating Backup of [.config]----------\n"
+echo "\n\n----------Creating Backup of .config folder----------\n"
 cd ~
 tar -cvzf old_config_backup.tar .config
 cd -
@@ -85,6 +86,13 @@ echo "\n\n [+] Config. Backup Created.\n"
 
 echo "\n----------Copying new configurations----------\n"
 #cp -vr .config ~
+
+echo "\n----------Copying Themes----------\n"
+# cp -vr .theme ~
+
+echo "\n----------Copying fonts & system extensions----------\n"
+#cp -vr .local ~
+
 
 
 ################################
