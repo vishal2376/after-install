@@ -126,3 +126,4 @@ sudo apt-get autoremove
 # TODO #
 ########
 echo "\n\n----------[TODO] : Copy wallpapers to '.local\share\wallheaven'----------\n"
+echo "\n----------[TODO] : Install vim plugins [:PlugInstall]----------\n"
