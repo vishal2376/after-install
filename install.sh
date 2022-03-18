@@ -47,7 +47,7 @@ echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
 
 echo "\n----------Installing multimedia tools----------\n"
-sudo apt-get install ffmpeg mpv sxiv gscan2pdf pulseaudio  -y
+sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick pulseaudio  -y
 
 echo "\n----------Installing fonts----------\n"
 sudo apt-get install fonts-firacode fonts-font-awesome -y
@@ -100,6 +100,7 @@ echo "\n----------Copying fonts & system extensions----------\n"
 echo "\n----------Copying *rc files----------\n"
 #cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile .vimrc ~
 #cp -vr .vim ~
+
 
 
 ################################
