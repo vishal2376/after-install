@@ -44,7 +44,7 @@ echo "\n\n----------Installing basic tools----------\n"
 sudo apt-get install sed git jq grep openssl aria2 imwheel -y
 
 echo "\n----------Installing programming tools----------\n"
-sudo apt-get install g++ clang python3 python3-pip -y
+sudo apt-get install g++ clang clangd python3 python3-pip -y
 
 echo "\n----------Installing multimedia tools----------\n"
 sudo apt-get install ffmpeg mpv sxiv gscan2pdf pulseaudio  -y
