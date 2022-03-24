@@ -17,7 +17,7 @@ timedatectl set-local-rtc 1
 ##############################################
 
 echo "\n\n----------Installing basic tools----------\n"
-sudo apt-get install apt-transport-https curl net-tools
+sudo apt-get install apt-transport-https curl net-tools -y
 
 echo "\n----------Adding GPG Keys----------\n"	
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
@@ -41,7 +41,7 @@ sudo apt-get install brave-browser-nightly -y
 #############################
 
 echo "\n\n----------Installing basic tools----------\n"
-sudo apt-get install sed git jq grep openssl vim aria2 imwheel coreutils coreutils fzf xdg-utils -y
+sudo apt-get install sed git jq grep openssl vim aria2 imwheel coreutils coreutils fzf xdg-utils suckless-tools -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
@@ -54,7 +54,6 @@ sudo apt-get install fonts-firacode fonts-font-awesome -y
 
 echo "\n----------Installing editing & recording tools----------\n"
 sudo apt-get install kdenlive obs-studio gimp audacity -y
-
 
 echo "\n----------Installing system tweaking tools----------\n"
 sudo apt-get install gnome-tweaks gnome-shell gnome-shell-common -y
@@ -69,8 +68,6 @@ echo "\n\n----------Installing Social Apps----------\n"
 sudo snap install telegram-desktop --edge
 sudo snap install discord
 sudo snap install whatsapp-for-linux
-sudo snap install mailspring
-
 
 echo "\n----------Installing Development Apps----------\n"
 sudo snap install gitkraken --classic
