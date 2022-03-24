@@ -141,10 +141,11 @@ sudo chmod -R +x /usr/local/bin
 echo "\n\n----------Installing Auto CPU Freq----------\n"
 git clone https://github.com/AdnanHodzic/auto-cpufreq.git
 cd auto-cpufreq && sudo ./auto-cpufreq-installer
+pip install psutil
 sudo auto-cpufreq --install
 
 echo "\n\n----------Removing unwanted tools----------\n"
-sudo apt-get autoremove
+sudo apt-get autoremove -y
 
 
 
