@@ -135,6 +135,14 @@ echo "\n----------Giving Permission to scripts----------\n"
 sudo chmod -R +x /usr/local/bin
 
 
+########################
+# Optimzing & Cleaning #
+########################
+echo "\n\n----------Installing Auto CPU Freq----------\n"
+git clone https://github.com/AdnanHodzic/auto-cpufreq.git
+cd auto-cpufreq && sudo ./auto-cpufreq-installer
+sudo auto-cpufreq --install
+
 echo "\n\n----------Removing unwanted tools----------\n"
 sudo apt-get autoremove
 
