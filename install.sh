@@ -76,27 +76,45 @@ sudo snap install nodejs --classic
 
 
 
+#######################
+# Configure Oh my ZSH #
+#######################
+echo "\n\n----------Installing zsh shell----------\n"
+sudo apt-get install zsh
+
+echo "\n\n----------Installing oh my zsh----------\n"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "\n\n----------Installing powerlevel10k theme----------\n"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+echo "\n\n----------Installing zsh Plugins----------\n"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-vi-mode
+
+
 ###############################
 # Copying configuration files #
 ###############################
 echo "\n\n----------Creating Backup of .config folder----------\n"
-# cd ~
-# tar -cvzf old_config_backup.tar .config
-# cd -
+cd ~
+tar -cvzf old_config_backup.tar .config
+cd -
 echo "\n\n [+] Config. Backup Created.\n"
 
 echo "\n----------Copying new configurations----------\n"
-#cp -vr .config ~
+cp -vr .config ~
 
 echo "\n----------Copying Themes----------\n"
-# cp -vr .theme ~
+cp -vr .theme ~
 
 echo "\n----------Copying fonts & system extensions----------\n"
-#cp -vr .local ~
+cp -vr .local ~
 
 echo "\n----------Copying *rc files----------\n"
-#cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile .vimrc ~
-#cp -vr .vim ~
+cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile .vimrc ~
+cp -vr .vim ~
 
 
 
