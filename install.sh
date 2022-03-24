@@ -43,7 +43,7 @@ sudo apt install mono-devel -y
 #############################
 
 echo "\n\n----------Installing basic tools----------\n"
-sudo apt-get install sed git jq grep openssl vim aria2 imwheel coreutils coreutils fzf xdg-utils suckless-tools -y
+sudo apt-get install sed git jq grep openssl vim aria2 imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
