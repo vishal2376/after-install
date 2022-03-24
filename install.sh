@@ -126,7 +126,7 @@ sudo apt-get install jq pup dmenu xclip -y
 pip install pywal
 
 echo "\n----------Copying scripts----------\n"
-#sudo cp -vr scripts/* /usr/local/bin/
+sudo cp -vr scripts/* /usr/local/bin/
 
 echo "\n----------Giving Permission to scripts----------\n"
 sudo chmod -R +x /usr/local/bin
