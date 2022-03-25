@@ -23,6 +23,7 @@ echo "\n----------Adding GPG Keys----------\n"
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-nightly-archive-keyring.gpg https://brave-browser-apt-nightly.s3.brave.com/brave-browser-nightly-archive-keyring.gpg
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+sudo add-apt-repository ppa:o2sh/onefetch
 
 echo "\n----------Adding Channel----------\n"
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -36,7 +37,7 @@ echo "\n----------Installing app from sources----------\n"
 sudo apt-get install sublime-text -y
 sudo apt-get install brave-browser-nightly -y
 sudo apt install mono-devel -y
-
+sudo apt-get install onefetch
 
 #############################
 # Installing Tools from apt #
