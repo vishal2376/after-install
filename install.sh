@@ -37,7 +37,7 @@ echo "\n----------Installing app from sources----------\n"
 sudo apt-get install sublime-text -y
 sudo apt-get install brave-browser-nightly -y
 sudo apt install mono-devel -y
-sudo apt-get install onefetch
+sudo apt-get install onefetch -y
 
 #############################
 # Installing Tools from apt #
