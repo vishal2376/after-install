@@ -74,7 +74,7 @@ sudo snap install whatsapp-for-linux
 echo "\n----------Installing Development Apps----------\n"
 sudo snap install gitkraken --classic
 sudo snap install blender --classic
-sudo snap install nodejs --classic
+sudo snap install node --classic
 
 
 
