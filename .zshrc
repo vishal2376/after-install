@@ -95,7 +95,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode zsh-autosuggestions)
-plugins=(git zsh-vi-mode zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git vi-mode zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,7 +124,20 @@ export PAGER="most"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias wallpaper="xdg-open ~/.local/share/wallhaven"
+alias wallpaper="sxiv ~/.local/share/wallhaven"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+LAST_REPO=""
+cd() { 
+    builtin cd "$@";
+    git rev-parse 2>/dev/null;
+
+    if [ $? -eq 0 ]; then
+        if [ "$LAST_REPO" != $(basename $(git rev-parse --show-toplevel)) ]; then
+        onefetch
+        LAST_REPO=$(basename $(git rev-parse --show-toplevel))
+        fi
+    fi
+}
