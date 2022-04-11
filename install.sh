@@ -108,9 +108,6 @@ echo "\n\n [+] Config. Backup Created.\n"
 echo "\n----------Copying new configurations----------\n"
 cp -vr .config ~
 
-echo "\n----------Copying Themes----------\n"
-cp -vr .theme ~
-
 echo "\n----------Copying fonts & system extensions----------\n"
 cp -vr .local ~
 
@@ -135,6 +132,9 @@ cd ~/.telegram-palette-gen
 
 echo "\n----------Changing theme + color scheme----------\n"
 change-wallpaper
+
+echo "\n----------Installing theme installer----------\n"
+sudo dpkg -i software/ocs-url.deb
 
 echo "\n----------Copying scripts----------\n"
 sudo cp -vr scripts/* /usr/local/bin/
