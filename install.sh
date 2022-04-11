@@ -134,6 +134,9 @@ git clone --depth 1 https://github.com/matteoguarda/telegram-palette-gen ~/.tele
 cd ~/.telegram-palette-gen
 ./telegram-palette-gen
 
+echo "\n----------Changing theme + color scheme----------\n"
+change-wallpaper
+
 echo "\n----------Copying scripts----------\n"
 sudo cp -vr scripts/* /usr/local/bin/
 
