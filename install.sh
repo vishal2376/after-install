@@ -55,9 +55,6 @@ sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick pulseaudio  -y
 echo "\n----------Installing fonts----------\n"
 sudo apt-get install fonts-firacode fonts-font-awesome -y
 
-echo "\n----------Installing editing & recording tools----------\n"
-sudo apt-get install kdenlive obs-studio gimp audacity -y
-
 echo "\n----------Installing system tweaking tools----------\n"
 sudo apt-get install gnome-tweaks gnome-shell gnome-shell-common -y
 
@@ -73,7 +70,6 @@ sudo snap install discord
 sudo snap install whatsapp-for-linux
 
 echo "\n----------Installing Development Apps----------\n"
-sudo snap install gitkraken --classic
 sudo snap install blender --classic
 sudo snap install node --classic
 
