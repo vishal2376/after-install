@@ -86,6 +86,9 @@ echo "\n\n----------Installing zsh shell----------\n"
 sudo apt-get install zsh
 
 echo "\n\n----------Installing oh my zsh----------\n"
+print '\n\n###########################'
+print '# Press CTRL+D to exit zsh#'
+print '###########################\n\n'
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "\n\n----------Installing powerlevel10k theme----------\n"
@@ -127,7 +130,13 @@ cp -vr .vim ~
 ################################
 echo "\n\n----------Installing scripts dependencies----------\n"
 sudo apt-get install jq pup dmenu xclip -y
+
+
+echo "\n----------Color Scheme changer----------\n"
 pip install pywal
+git clone --depth 1 https://github.com/matteoguarda/telegram-palette-gen ~/.telegram-palette-gen
+cd ~/.telegram-palette-gen
+./telegram-palette-gen
 
 echo "\n----------Copying scripts----------\n"
 sudo cp -vr scripts/* /usr/local/bin/
