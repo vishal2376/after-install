@@ -67,7 +67,6 @@ sudo apt-get install gnome-tweaks gnome-shell gnome-shell-common -y
 echo "\n\n----------Installing Social Apps----------\n"
 sudo snap install telegram-desktop --edge
 sudo snap install discord
-sudo snap install whatsapp-for-linux
 
 echo "\n----------Installing Development Apps----------\n"
 sudo snap install blender --classic
