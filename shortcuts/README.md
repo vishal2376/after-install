@@ -1,26 +1,26 @@
 # Custom Shortcut List
 
 - Disable Mouse Scroll
-    `gnome-terminal -- pkill imwheel`
+    ```gnome-terminal -- pkill imwheel```
 - Enable Mouse Scroll
-    `mouse-scroll 3`
+    ```mouse-scroll 3```
 - Telegram
-    `telegram-desktop`
+    ```telegram-desktop```
 - Blender
-    `blender`
+    ```blender```
 - Google
-    `google`
+    ```google```
 - Discord
-    `discord`
+    ```discord```
 - Shutdown
-    `gnome-session-quit --power-off`
+    ```gnome-session-quit --power-off```
 - Kill Application
-    `xkill`
+    ```xkill```
 - Sublime Text 4
-    `subl`
+    ```subl```
 - Download Wallpaper
-    `waldl`
+    ```waldl```
 - Random Wallpaper
-    `change-wallpaper`
+    ```change-wallpaper```
 - Terminal
-    `gnome-terminal`
+    ```gnome-terminal```
