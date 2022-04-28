@@ -45,6 +45,7 @@ sudo apt-get install onefetch -y
 
 echo "\n\n----------Installing basic tools----------\n"
 sudo apt-get install sed git jq grep openssl vim aria2 imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
+sudo apt install libinput-tools libinih-dev libxdo-dev -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
@@ -72,6 +73,20 @@ echo "\n----------Installing Development Apps----------\n"
 sudo snap install blender --classic
 sudo snap install node --classic
 
+
+
+#####################
+# Installing Swipes #
+#####################
+
+echo "\n\n----------Installing comfortable-swipe----------\n"
+git clone https://github.com/Hikari9/comfortable-swipe.git --depth 1
+cd comfortable-swipe
+bash install
+cd -
+
+echo "\n----------Giving Permissions--------------\n"
+sudo gpasswd -a "$USER" "$(ls -l /dev/input/event* | awk '{print $4}' | head --line=1)"
 
 
 #######################
@@ -157,6 +172,7 @@ sudo apt-get autoremove -y
 # TODO #
 ########
 echo "\n\n----------[TODO] : Copy wallpapers to '.local\share\wallheaven'----------"
+echo "\n----------[TODO] : Run PostInstall Script----------"
 echo "\n----------[TODO] : Install vim plugins [:PlugInstall]----------"
 echo "\n----------[TODO] : Configure github ssh keys----------"
 echo "\n----------[TODO] : Configure Brave browser Sync----------"
