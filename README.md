@@ -18,6 +18,7 @@
 ## Installation
 
 ```bash
+  sudo apt-get install git
   git clone https://github.com/vishal2376/after-install.git
   cd after-install
   chmod +x install.sh
