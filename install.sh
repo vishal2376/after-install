@@ -129,18 +129,14 @@ pip install pywal
 git clone --depth 1 https://github.com/matteoguarda/telegram-palette-gen ~/.telegram-palette-gen
 cd ~/.telegram-palette-gen
 ./telegram-palette-gen
-
-echo "\n----------Changing theme + color scheme----------\n"
-change-wallpaper
-
-echo "\n----------Installing theme installer----------\n"
-sudo dpkg -i software/ocs-url.deb
+cd -
 
 echo "\n----------Copying scripts----------\n"
 sudo cp -vr scripts/* /usr/local/bin/
 
 echo "\n----------Giving Permission to scripts----------\n"
 sudo chmod -R +x /usr/local/bin
+sudo chmod -R +x ~/.config/sxiv/
 
 
 ########################
@@ -167,5 +163,5 @@ echo "\n----------[TODO] : Configure Brave browser Sync----------"
 echo "\n----------[TODO] : Set themes, fonts , icons ,etc. using Tweak tool----------"
 echo "\n----------[TODO] : Set custom shortcut keys(see 'shortcut' folder for reference)----------"
 echo "\n----------[TODO] : Edit mount option[set to manually] of ECHO Drive----------"
-echo "\n----------[TODO] : After mounting, create a symbolic link of documents(ln -S /mnt/<ECHO ID>/Documents ~)----------"
+echo "\n----------[TODO] : After mounting, create a symbolic link of documents(ln -S /mnt/ECHO/Documents ~)----------"
 echo "\n----------[TODO] : Integerate CF and CC calender with system calender----------"
