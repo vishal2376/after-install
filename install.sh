@@ -44,7 +44,7 @@ sudo apt-get install onefetch -y
 #############################
 
 echo "\n\n----------Installing basic tools----------\n"
-sudo apt-get install sed git jq grep openssl vim aria2 imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
+sudo apt-get install sed git jq grep openssl vim aria2 most imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
 sudo apt install libinput-tools libinih-dev libxdo-dev -y
 
 echo "\n----------Installing programming tools----------\n"
