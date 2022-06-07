@@ -28,5 +28,5 @@ fi
 
 
 #mouse scroll
-imwheel &
+#imwheel &
 

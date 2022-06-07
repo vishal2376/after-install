@@ -1,0 +1,10 @@
+[user]
+	name = vishal2376
+	email = vishalsingh2376@gmail.com
+[safe]
+	directory = /mnt/ECHO
+	directory = /mnt/ECHO/Documents/python/personal-bot
+	directory = /mnt/ECHO/Documents/Bash/after-install
+	directory = /home/vishal/Downloads/auto-cpufreq
+	directory = /home/vishal/Downloads/auto-cpufreq
+	directory = /mnt/ECHO/Documents/BlenderProjects

@@ -29,6 +29,7 @@
 ## Screeshots :
 
 <img src="desktop.png">
+<img src="terminal.png">
 
 ## Themes & Icons Links
 

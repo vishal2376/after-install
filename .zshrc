@@ -15,6 +15,14 @@ source ~/.cache/wal/colors-tty.sh
 #--------------------------------------------------
 
 
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# Create the alias.
+alias dmenu='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "JesBrains Mono"'
+
+
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -95,7 +103,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git vi-mode zsh-autosuggestions)
-plugins=(git vi-mode zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -124,7 +132,15 @@ export PAGER="most"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias wallpaper="sxiv ~/.local/share/wallhaven"
+alias wallpaper="sxiv -o ~/.local/share/wallhaven"
+
+yt(){
+  yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' $1 -o '~/Videos/YT-Downloads/%(channel)s/%(title)s.%(ext)s'
+}
+
+ht(){
+  $(history | cut -c 1-7 --complement| sort -u | dmenu -l 10 -p "Search History : ")
+}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
