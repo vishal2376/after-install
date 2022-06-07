@@ -158,10 +158,7 @@ sudo chmod -R +x ~/.config/sxiv/
 # Optimzing & Cleaning #
 ########################
 echo "\n\n----------Installing Auto CPU Freq----------\n"
-git clone https://github.com/AdnanHodzic/auto-cpufreq.git
-cd auto-cpufreq && sudo ./auto-cpufreq-installer
-pip install psutil
-sudo auto-cpufreq --install
+sudo snap install auto-cpufreq  
 
 echo "\n\n----------Removing unwanted tools----------\n"
 sudo apt-get autoremove -y
@@ -172,7 +169,7 @@ sudo apt-get autoremove -y
 # TODO #
 ########
 echo "\n\n----------[TODO] : Copy wallpapers to '.local\share\wallheaven'----------"
-echo "\n----------[TODO] : Run PostInstall Script----------"
+echo "\n----------[TODO] : Change Drive Name(ECHO) & then run PostInstall Script----------"
 echo "\n----------[TODO] : Install vim plugins [:PlugInstall]----------"
 echo "\n----------[TODO] : Configure github ssh keys----------"
 echo "\n----------[TODO] : Configure Brave browser Sync----------"
