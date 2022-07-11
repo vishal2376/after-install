@@ -138,6 +138,10 @@ yt(){
   yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' $1 -o '~/Videos/YT-Downloads/%(channel)s/%(title)s.%(ext)s'
 }
 
+song(){
+  yt-dlp -f 'bestaudio' --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(title)s.%(ext)s'
+}
+
 ht(){
   $(history | cut -c 1-7 --complement| sort -u | dmenu -l 10 -p "Search History : ")
 }

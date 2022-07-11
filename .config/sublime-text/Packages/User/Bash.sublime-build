@@ -1,0 +1,15 @@
+{
+	"cmd" : ["chmod +x $file_name && ./$file_name"], 
+	"selector" : "source.sh",
+	"shell": true,
+	"working_dir" : "$file_path",
+	
+	"variants": 
+	[
+		{
+			"name": "Terminal",
+			"cmd" : ["gnome-terminal -e 'bash -c \"chmod +x $file_name && ./$file_name;echo;echo Press any Key to continue...;read line\"' 2>/dev/null"], 
+		},
+		
+	]
+}

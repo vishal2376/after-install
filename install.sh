@@ -69,12 +69,12 @@ sudo apt-get install gnome-tweaks gnome-shell gnome-shell-common -y
 ##############################
 
 echo "\n\n----------Installing Social Apps----------\n"
-sudo snap install telegram-desktop --edge
-sudo snap install discord
+#sudo snap install telegram-desktop --edge
+#sudo snap install discord
 
 echo "\n----------Installing Development Apps----------\n"
-sudo snap install blender --classic
-sudo snap install node --classic
+#sudo snap install blender --classic
+#sudo snap install node --classic
 
 
 
