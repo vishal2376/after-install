@@ -19,7 +19,7 @@ source ~/.cache/wal/colors-tty.sh
 . "${HOME}/.cache/wal/colors.sh"
 
 # Create the alias.
-alias dmenu='dmenu_run -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "JesBrains Mono"'
+alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "JesBrains Mono"'
 
 
 
@@ -31,7 +31,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/opt/flutter/bin:$PATH
+
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -133,13 +134,23 @@ export PAGER="most"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wallpaper="sxiv -o ~/.local/share/wallhaven"
+alias open-project="nohup env GDK_SCALE=2 GDK_DPI_SCALE=0.5 /home/vishal/Unity/Hub/Editor/2021.3.5f1/Editor/Unity -projectPath $1 >/dev/null 2>&1 &"
+
+
+pdf(){
+  eval xdg-open /mnt/ECHO/PDF/$(find /mnt/ECHO/PDF/ -type f -iname "*.pdf"| awk -F'/' '{print $5 "/" $6}'  | dmenu -p "Open PDF: " -l 15 -i | sed 's/ /\\ /g')
+}
+
+vid(){
+  eval mpv $(find ~/Videos/ | dmenu -p "Watch : " -i -l 10 | sed 's/ /\\ /g')
+}
 
 yt(){
-  yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' $1 -o '~/Videos/YT-Downloads/%(channel)s/%(title)s.%(ext)s'
+  yt-dlp -f 'bestvideo[height<=1080]+ba' $1 -o '~/Videos/YT-Downloads/%(channel)s/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s'
 }
 
 song(){
-  yt-dlp -f 'bestaudio' --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(title)s.%(ext)s'
+  yt-dlp -f '140' --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(playlist)s/%(title)s.%(ext)s'
 }
 
 ht(){
