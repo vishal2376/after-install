@@ -150,7 +150,7 @@ yt(){
 }
 
 song(){
-  yt-dlp -f '140' --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(playlist)s/%(title)s.%(ext)s'
+  yt-dlp -f '140' --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(playlist)s/%(title)s.%(ext)s' --add-metadata --metadata-from-title "%(artist)s - %(title)s"
 }
 
 ht(){
