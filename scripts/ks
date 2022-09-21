@@ -1,0 +1,27 @@
+#!/bin/zsh
+
+kde_dir="$HOME/.kde"
+
+#check .kde folder exists (if not then create it)
+[[ -d "$kde_dir" ]] || mkdir kde_dir
+
+#create a device id file
+dev_file="$kde_dir/dev_id.txt"
+
+#check if file exists (if not then create file with device id)
+[[ -f $dev_file ]] || kdeconnect-cli -l | fzf | cut -d':' -f2 | awk '{print $1}' > "$dev_file"
+
+dev_id=$(head -n1 "$dev_file")
+
+#take argument as filename(share)
+file=$1
+
+#check filename (sharing)
+[[ "$file" ]] || file="$(fzf)"
+[[ "$file" ]] || exit 1
+
+#share file to device
+for i in $@
+do
+	kdeconnect-cli -d "$dev_id" --share "$i"
+done
