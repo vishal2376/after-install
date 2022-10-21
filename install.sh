@@ -10,8 +10,6 @@ sudo apt-get upgrade -y
 echo "\n----------Fixing Dual Boot Time----------\n"
 timedatectl set-local-rtc 1
 
-
-
 ##############################################
 # Adding Repositories from official websites #
 ##############################################
@@ -20,15 +18,15 @@ echo "\n\n----------Installing basic tools----------\n"
 sudo apt-get install apt-transport-https curl net-tools -y
 
 echo "\n----------Adding GPG Keys----------\n"	
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-nightly-archive-keyring.gpg https://brave-browser-apt-nightly.s3.brave.com/brave-browser-nightly-archive-keyring.gpg
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 wget -qO - https://hub.unity3d.com/linux/keys/public | sudo apt-key add -
 sudo add-apt-repository ppa:o2sh/onefetch
 
 echo "\n----------Adding Channel----------\n"
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-nightly-archive-keyring.gpg arch=amd64] https://brave-browser-apt-nightly.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-nightly.list
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 sudo sh -c 'echo "deb https://hub.unity3d.com/linux/repos/deb stable main" > /etc/apt/sources.list.d/unityhub.list'
 
@@ -37,7 +35,7 @@ sudo apt-get update
 
 echo "\n----------Installing app from sources----------\n"
 sudo apt-get install sublime-text -y
-sudo apt-get install brave-browser-nightly -y
+sudo apt-get install brave-browser -y
 sudo apt install mono-devel -y
 sudo apt-get install unityhub -y
 sudo apt-get install onefetch -y
@@ -48,7 +46,7 @@ sudo apt-get install onefetch -y
 
 echo "\n\n----------Installing basic tools----------\n"
 sudo apt-get install sed git jq grep openssl vim aria2 most imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
-sudo apt install libinput-tools libinih-dev libxdo-dev -y
+sudo apt install libinput-tools libinih-dev libxdo-dev astyle -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
@@ -60,7 +58,7 @@ echo "\n----------Installing fonts----------\n"
 sudo apt-get install fonts-firacode fonts-font-awesome -y
 
 echo "\n----------Installing system tweaking tools----------\n"
-sudo apt-get install gnome-tweaks gnome-shell gnome-shell-common -y
+sudo apt-get install gnome-tweaks chrome-gnome-shell -y
 
 
 
@@ -96,7 +94,7 @@ sudo gpasswd -a "$USER" "$(ls -l /dev/input/event* | awk '{print $4}' | head --l
 # Configure Oh my ZSH #
 #######################
 echo "\n\n----------Installing zsh shell----------\n"
-sudo apt-get install zsh
+sudo apt-get install zsh -y
 
 echo "\n\n----------Installing oh my zsh----------\n"
 print '\n\n###########################'
@@ -117,11 +115,11 @@ git clone https://github.com/jeffreytse/zsh-vi-mode ${ZSH_CUSTOM:-~/.oh-my-zsh/c
 ###############################
 # Copying configuration files #
 ###############################
-echo "\n\n----------Creating Backup of .config folder----------\n"
-cd ~
-tar -cvzf old_config_backup.tar .config
-cd -
-echo "\n\n [+] Config. Backup Created.\n"
+# echo "\n\n----------Creating Backup of .config folder----------\n"
+#cd ~
+#tar -cvzf old_config_backup.tar .config
+#cd -
+# echo "\n\n [+] Config. Backup Created.\n"
 
 echo "\n----------Copying new configurations----------\n"
 cp -vr .config ~
