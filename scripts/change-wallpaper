@@ -17,5 +17,5 @@ wal -c
 #generate new theme
 wal -i $wallpaper
 
-#generate telegram theme
-~/.telegram-palette-gen/telegram-palette-gen --wal
+# #generate telegram theme
+# ~/.telegram-palette-gen/telegram-palette-gen --wal

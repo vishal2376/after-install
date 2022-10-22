@@ -143,7 +143,7 @@ pip install yt-dlp
 
 echo "\n----------Color Scheme changer----------\n"
 pip install pywal
-#git clone --depth 1 https://github.com/matteoguarda/telegram-palette-gen ~/.telegram-palette-gen
+# git clone --depth 1 https://github.com/matteoguarda/telegram-palette-gen ~/.telegram-palette-gen
 # cd ~/.telegram-palette-gen
 # ./telegram-palette-gen
 # cd -
