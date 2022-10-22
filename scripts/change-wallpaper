@@ -9,7 +9,7 @@ else
 fi
 
 #set wallpaper
-gsettings set org.gnome.desktop.background picture-uri $wallpaper
+gsettings set org.gnome.desktop.background picture-uri-dark $wallpaper
 
 #delete old cached themes
 wal -c
