@@ -1,0 +1,25 @@
+Version 6.4.4
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Fixed a bug when calling "ECC: clean current cmake cache".
+  It now works as expected.
+
+Love this plugin? Support its development! 💰💸💶
+-------------------------------------------------
+If you appreciate it - support it. How much would you say it is worth to you?
+This plugin took a significant amount of effort. It is available and will always
+be available for free, both as freedom and as beer.
+
+GitHub Sponsors is the preferred way to support the development
+https://github.com/sponsors/niosus
+
+Alternatively, become a backer on Open Collective!
+https://opencollective.com/EasyClangComplete#backers
+
+If you use this plugin in a company, push to become a sponsor!
+https://opencollective.com/EasyClangComplete#sponsor
+
+For more info head here:
+https://github.com/niosus/EasyClangComplete#support-it

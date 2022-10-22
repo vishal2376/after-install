@@ -1,0 +1,39 @@
+Version 6.1.0
+=============
+
+Breaking changes:
+-----------------
+The compilation database is now parsed differently by default:
+  + All entries are parsed in a lazy fashion by default.
+  + This allows to load huge databases relatively quickly.
+  + There is no more "all" entry added to the database.
+  + If the file is not in the database and no mapping to an existing file found
+    through "header_to_source_mapping" setting there will be no flags emmitted
+    for this file.
+  + To return old behavior, set "lazy_flag_parsing" setting to "false".
+
+Other changes:
+--------------
+- Resolve symlinks for file locations in info popup.
+- Resolve symlinks for files from compilation flags sources.
+- Show column and row when showing index.
+
+Support the development!
+------------------------
+💜 this plugin? Please consider buying me a 🍵
+https://github.com/niosus/EasyClangComplete#support-it
+
+Thanks to all the awesome contributors!
+If you add bounties to Bountysource you can support them too!
+https://www.bountysource.com/teams/easyclangcomplete
+
+Become a backer on Open Collective!
+https://opencollective.com/EasyClangComplete#backers
+
+I you use this plugin in a company, push to become a sponsor!
+https://opencollective.com/EasyClangComplete#sponsor
+
+This plugin took a significant amount of effort. It is available and will always
+be available for free, both as freedom and as beer.
+
+If you appreciate it - support it. How much would you say it is worth to you?

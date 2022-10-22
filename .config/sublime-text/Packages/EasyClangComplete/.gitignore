@@ -1,0 +1,34 @@
+
+# added by GitSavvy
+/easy_clang_complete.sublime-workspace
+
+# added by GitSavvy
+/test.c
+
+# added by GitSavvy
+/test.cpp
+
+# added by GitSavvy
+/easy_auto_complete.sublime-workspace
+
+# added by GitSavvy
+/tests/cmake_tests/.clang_complete
+
+/plugin/utils/__pycache__/
+
+*__pycache__/
+EasyClangComplete.sublime-workspace
+
+*.pyc
+
+/docs/.sass-cache/
+
+/site/
+/tests/bazel_project/bazel-bazel_project
+/tests/bazel_project/bazel-bin
+/tests/bazel_project/bazel-out
+/tests/bazel_project/bazel-testlogs
+/tests/bazel_project/compile_commands.json
+tests/bazel/good_project/bazel-*
+*compile_commands.json
+tests/bazel/bad_project/bazel-*

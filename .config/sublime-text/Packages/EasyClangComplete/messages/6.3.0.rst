@@ -1,0 +1,23 @@
+Version 6.3.0
+=============
+
+Generate compilation database with Bazel!
+-----------------------------------------
+There is a new option available for everyone using Bazel on Linux and OSX.
+It is still experimental, but seems to be working.
+
+If you have a Bazel project, open any file in it and call the command:
+"ECC: (Bazel) Generate compile_commands.json"
+
+This will use https://github.com/grailbio/bazel-compilation-database
+It generates a compilation database and if it fails it shows the error
+in an output panel. The approximate sequence of actions is as follows:
+
+- Search for a folder with a WORKSPACE file up the tree.
+- Run a script "generate.sh" from the repo in that folder.
+- If the command fails, show the output.
+
+👏🧼 Stay safe!
+---------------
+Hope everyone is staying safe in these weird times! This is a good time to
+stay at home and delve into that side-project you've been postponing for ages!

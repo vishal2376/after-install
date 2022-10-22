@@ -1,0 +1,32 @@
+Version 6.0.2
+=============
+
+Bug fixes:
+----------
+- Fix -cxx-isystem flag not parsed correctly.
+- Fix error with new list search scope.
+- Thanks to @mjendruk the wildcard "$project_base_path" will **not** be
+  deprecated. Please ignore the message in version 6.0.0 release.
+  "$project_base_path" has a different meaning than "$project_path". Both will
+  be available for use.
+
+
+Support the development!
+------------------------
+💜 this plugin? Please consider buying me a 🍵
+https://github.com/niosus/EasyClangComplete#support-it
+
+Thanks to all the awesome contributors!
+If you add bounties to Bountysource you can support them too!
+https://www.bountysource.com/teams/easyclangcomplete
+
+Become a backer on Open Collective!
+https://opencollective.com/EasyClangComplete#backers
+
+I you use this plugin in a company, push to become a sponsor!
+https://opencollective.com/EasyClangComplete#sponsor
+
+This plugin took a significant amount of effort. It is available and will always
+be available for free, both as freedom and as beer.
+
+If you appreciate it - support it. How much would you say it is worth to you?

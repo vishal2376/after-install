@@ -1,0 +1,247 @@
+Version 5.0.1
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Info popup also shows links to argument types, thanks @kjteske
+- Show ERROR/WARNING prefix when showing all errors
+- Fix the margin around the new popups
+- Fix reloading the plugin
+
+Version 5.0.2
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Fix errors opening files with unicode characters, thanks @kjteske
+- Allow using the plugin with cuda-c++ syntax
+- Allow using with Apple Clang 9.1 (XCode 9.3)
+- Override default std flag with one generated from flags source if needed
+
+Version 5.0.4
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Escape declaration text for markdown popups, thanks @mheinzler
+- Remove indentation when showing the body of a type, thanks @mheinzler
+- Show parameters for more kinds of functions, thanks @mheinzler
+- Fix parsing unsaved files using old libclang, thanks @mhoeher
+- Hide popups on movin mouse away, thanks @papadokolos
+- Log error with std flags instead of bugging the user
+
+Version 5.0.5
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Escape errors and warnings for markdown popups, thanks @mheinzler
+- Fix wrong size used by libclang with multi-byte chars, thanks @mheinzler
+- Better Objective-C popups, thanks @kjteske
+- Map Apple clang 7.0 to LLVM clang 3.8
+
+Version 5.0.6
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Fix issues with having spaces in paths to clang, libclang etc.
+- Fix seldomly occurring error at plugin startup
+- Better objective C info popups, thanks @kjteske
+- Allow using plugin with deviot syntax
+
+Version 5.1.0
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Fix detection of Apple clang 10.
+- Fix wrong parsing of -std flags.
+- Add a Makefile as a flag source, thanks @martinwilli.
+- Fix ObjC popups with NSArray types, thanks @kjteske
+
+Version 5.2.0
+=============
+
+Improvements and bug fixes:
+---------------------------
+- New setting "ignore_list" to disable the plugin for specific files/folders.
+- New setting "valid_lang_syntaxes" that holds a dict of valid syntaxes. This
+  makes them user configurable.
+- Improve popups for templated C++ types, thanks @kjteske
+- DEPRECATION: syntaxes "C++ (Colorcoded)", "cuda-c++", "deviot" have been
+  removed. Use the "valid_lang_syntaxes" setting to add them back if you use
+  them.
+- DEPRECATION: language specific flags are now under new setting: "lang_flags".
+- DEPRECATION: remove the keybinding for showing all errors, but still leaving
+  the quick access command. This is needed to avoid clashing with other key
+  bindings on macOS. Please add it back to your user settings if needed.
+
+Version 5.2.1
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Add dot linting symbol for errors and warnings. Thanks @schreda!
+- Fix not expanding environmental variables. Thanks @mjendruk!
+- Remove annoying false error message introduced in last release.
+
+Version 5.2.2
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Fix detecting clang 7.0
+
+Version 5.3.0
+=============
+
+Improvements and bug fixes:
+---------------------------
+Fellow roboticists, your catkin projects now can be automatically configured!
+
+If you're using sublime projects for your catkin projects you no longer need to
+manually configure the settings. These settings should now be automatically
+generated based on your workspace and the available ROS version on your system.
+Sorry, but Linux only for now. If you want this functionality on other systems -
+feel free to contribute!
+
+Version 5.3.1
+=============
+
+Improvements and bug fixes:
+---------------------------
+- fix an issue when CMakeLists.txt would not be found because of a space in the
+  project definition line, thanks @berteauxjb for finding this bug!
+
+Version 5.3.2
+=============
+
+Documentation website ready!
+----------------------------
+The documentation website is live: https://niosus.github.io/EasyClangComplete/
+
+Improvements and bug fixes:
+---------------------------
+- Set `use_target_compiler_built_in_flags` to "false" by default as it sometimes
+  causes issues that are hard to debug on relatively simple configurations. I
+  believe this should stay as a feature for advanced users that know what they
+  are doing.
+- Add support for upcoming clang 8.0.
+
+Version 5.3.3
+=============
+
+Improvements and bug fixes:
+---------------------------
+- Fix skipping CMakeLists.txt file with "project (...)"
+- Fix checking the wrong completion trigger
+
+Version 5.4.0
+=============
+
+New functionality:
+------------------
+- Additional way that helps getting correct includes. New setting
+  "use_default_includes" is responsible for that. Read more here:
+  https://niosus.github.io/EasyClangComplete/settings/#use_default_includes
+- You can now complete includes by pressing the completion trigger after typing
+  "#include <" and it will show a list of possible includes
+
+Improvements and bug fixes:
+---------------------------
+- Path variables in "flags" in "flags_sources" are now properly expanded
+
+Version 5.5.0
+=============
+
+Improvements and fixes:
+-----------------------
+- Add a way to configure maximum popup window size, thanks @detly
+- Add correct parsing of all template types in info popup
+- Clarify the docs on the need to have clang and cmake binaries in PATH
+
+Version 5.6.0
+=============
+
+Deprecated settings:
+--------------------
+- `use_target_compiler_built_in_flags` removed
+- `target_<xxx>_compiler` replaced by `target_compilers` setting
+
+Improvements and fixes:
+-----------------------
+- New setting: `target_compilers` that replaces old `target_<xxx>_compiler` to
+  streamline flag configuration
+- New setting: `show_index_references` set by default to `true` used to enable
+  showing symbol references when showing an info popup
+- Add suffix used on Fedora to search for libclang, thanks @KingKili
+- [dev] Add a test to ensure that all settings are covered in the documentation
+
+Version 5.6.1
+=============
+
+Merry Christmas!
+----------------
+
+Improvements and fixes:
+-----------------------
+- Further fix to ensure we can find libclang on Fedora, thanks @KingKili
+- Fix behavior when user provided "libclang_path" is a folder
+- Improve documentation on the usage of libclang
+
+Version 5.6.2
+=============
+
+Improvements and fixes:
+-----------------------
+- Make plugin work with clang 7.1
+
+Version 6.0.0
+=============
+
+Improvements and fixes:
+-----------------------
+- Make glob wildcard expansion available for all paths in settings instead of
+  home-grown star expansion
+- Fix parsing errors that would sometimes eat part of the error message
+- Only hide default completions when we have something to show instead
+- By default force unix-type includes to make include auto-completion more
+  usable. The new setting to control this: "force_unix_includes"
+
+Deprecated settings:
+--------------------
+I have removed some old settings which break more things than they add.
+- "include_file_folder"
+- "include_file_parent_folder"
+
+If you rely on this behavior, you can update your "common_flags" with:
+-  "-I$file_path"
+-  "-I$file_path/.."
+This will have exactly the same effect
+
+To be deprecated wildcard:
+--------------------------
+I will soon deprecate the "$project_base_path" variable. It does the same as the
+Sublime Text standard "$project_path" but is longer and is not standard.
+
+
+Support the development!
+------------------------
+💜 this plugin? Please consider buying me a 🍵
+https://github.com/niosus/EasyClangComplete#support-it
+
+Thanks to all the awesome contributors!
+If you add bounties to Bountysource you can support them too!
+https://www.bountysource.com/teams/easyclangcomplete
+
+Become a backer on Open Collective!
+https://opencollective.com/EasyClangComplete#backers
+
+I you use this plugin in a company, push to become a sponsor!
+https://opencollective.com/EasyClangComplete#sponsor
+
+This plugin took a significant amount of effort. It is available and will always
+be available for free, both as freedom and as beer.
+
+If you appreciate it - support it. How much would you say it is worth to you?
