@@ -164,6 +164,13 @@ echo "\n\n----------Removing unwanted tools----------\n"
 sudo apt-get autoremove -y
 
 
+########################
+#    Git SSH Config    #
+########################
+ssh-keygen -t ed25519 -C "vishalsingh2376@gmail.com"
+ssh-add ~/.ssh/id_ed25519
+echo "\n\nAdd this to github ssh\n"
+cat ~/.ssh/id_ed25519.pub
 
 ########
 # TODO #
@@ -172,7 +179,7 @@ echo "\n\n----------[TODO] : Copy wallpapers to '.local\share\wallheaven'-------
 echo "\n----------[TODO] : Change Drive Name(ECHO) & then run PostInstall Script----------"
 echo "\n----------[TODO] : Install vim plugins [:PlugInstall]----------"
 echo "\n----------[TODO] : Install Autofreq from github----------"
-echo "\n----------[TODO] : Configure github ssh keys----------"
+echo "\n----------[TODO] : Add ssh key to github : cat ~/.ssh/id_ed25519.pub ----------"
 echo "\n----------[TODO] : Configure Brave browser Sync----------"
 echo "\n----------[TODO] : Set themes, fonts , icons ,etc. using Tweak tool----------"
 echo "\n----------[TODO] : Set custom shortcut keys(see 'shortcut' folder for reference)----------"
