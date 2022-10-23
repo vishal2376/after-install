@@ -136,6 +136,8 @@ export PAGER="most"
 alias wallpaper="sxiv -o ~/.local/share/wallhaven"
 alias open-project="nohup env GDK_SCALE=2 GDK_DPI_SCALE=0.5 /home/vishal/Unity/Hub/Editor/2021.3.5f1/Editor/Unity -projectPath $1 >/dev/null 2>&1 &"
 
+#fix dmenu locale error
+export LC_ALL=en_US.utf8
 
 pdf(){
   eval xdg-open /mnt/ECHO/PDF/$(find /mnt/ECHO/PDF/ -type f -iname "*.pdf"| awk -F'/' '{print $5 "/" $6}'  | dmenu -p "Open PDF: " -l 15 -i | sed 's/ /\\ /g')
