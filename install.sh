@@ -58,7 +58,7 @@ echo "\n----------Installing fonts----------\n"
 sudo apt-get install fonts-firacode fonts-font-awesome -y
 
 echo "\n----------Installing system tweaking tools----------\n"
-sudo apt-get install gnome-tweaks chrome-gnome-shell -y
+sudo apt-get install gnome-tweaks chrome-gnome-shell gnome-shell-extension-manager -y
 
 
 
