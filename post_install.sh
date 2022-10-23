@@ -33,3 +33,7 @@ echo "\n---------Adding custom shortcuts--------------\n"
 ./scripts/set_shortcut.py 'Telegram' 'telegram-desktop' '<Super><Shift>c'
 ./scripts/set_shortcut.py 'Enable Mouse Scroll' 'mouse-scroll 3' '<Super><Shift>F12'
 ./scripts/set_shortcut.py 'Disable Mouse Scroll' 'gnome-terminal -- pkill imwheel' '<Super>F12'
+
+echo "\n---------Activating tlp--------------\n"
+sudo systemctl enable tlp.service
+sudo tlp start
