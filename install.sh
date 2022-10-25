@@ -52,7 +52,7 @@ echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
 
 echo "\n----------Installing multimedia tools----------\n"
-sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick pulseaudio kdeconnect -y
+sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick ubuntu-restricted-extras pulseaudio kdeconnect -y
 
 echo "\n----------Installing fonts----------\n"
 sudo apt-get install fonts-firacode fonts-font-awesome -y
