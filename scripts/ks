@@ -3,7 +3,7 @@
 kde_dir="$HOME/.kde"
 
 #check .kde folder exists (if not then create it)
-[[ -d "$kde_dir" ]] || mkdir kde_dir
+[[ -d "$kde_dir" ]] || mkdir $kde_dir
 
 #create a device id file
 dev_file="$kde_dir/dev_id.txt"
