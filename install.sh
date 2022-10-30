@@ -46,13 +46,13 @@ sudo apt-get install onefetch -y
 
 echo "\n\n----------Installing basic tools----------\n"
 sudo apt-get install sed git jq grep openssl vim aria2 most imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
-sudo apt install libinput-tools libinih-dev libxdo-dev astyle adb tlp stacer -y
+sudo apt install libinput-tools libinih-dev libxdo-dev astyle adb tlp stacer breeze -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
 
 echo "\n----------Installing multimedia tools----------\n"
-sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick ubuntu-restricted-extras pulseaudio kdeconnect -y
+sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick ubuntu-restricted-extras pulseaudio obs-studio kdenlive kdeconnect -y
 
 echo "\n----------Installing fonts----------\n"
 sudo apt-get install fonts-firacode fonts-font-awesome -y
