@@ -5,9 +5,6 @@ comfortable-swipe autostart on
 sudo comfortable-swipe start
 
 echo "\n---------Removing Directories--------------\n"
-change-wallpaper
-
-echo "\n---------Removing Directories--------------\n"
 rm -r ~/Documents
 rm -r ~/Pictures
 rm -r ~/Downloads
@@ -21,7 +18,11 @@ ln -s /mnt/ECHO/Downloads ~
 ln -s /mnt/ECHO/Music ~
 ln -s /mnt/ECHO/Videos ~
 ln -s /mnt/ECHO/Unity ~
-cp /mnt/ECHO/wallhaven ~/.local/share
+cp -r /mnt/ECHO/wallhaven ~/.local/share
+
+
+echo "\n---------Change Wallpaper--------------\n"
+change-wallpaper
 
 echo "\n---------Adding custom shortcuts--------------\n"
 ./scripts/set_shortcut.py 'Terminal' 'gnome-terminal' '<Super>Return'
