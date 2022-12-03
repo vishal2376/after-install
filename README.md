@@ -38,6 +38,7 @@
 
 <img src="screenshots/desktop.png">
 <img src="screenshots/terminal.png">
+<img src="screenshots/vim.png">
 
 ## Terminal
 [Terminal Settings](screenshots/terminal)
