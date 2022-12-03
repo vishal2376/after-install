@@ -42,6 +42,10 @@
 ## Custom Shortcuts
 [Command List](shortcuts)
 
+
+## Gnome Extensions
+[Command List](extensions)
+
 ## More projects :
 
  - [Virtual Assistant](https://github.com/vishal2376/virtual-assistant)
