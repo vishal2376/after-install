@@ -43,11 +43,11 @@
 
 
 ## Custom Shortcuts
-[Command List](shortcuts)
+[Commands List](shortcuts)
 
 
 ## Gnome Extensions
-[Command List](extensions)
+[Extensions List](extensions)
 
 ## More projects :
 
