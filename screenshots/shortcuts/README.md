@@ -1,6 +1,6 @@
 # Custom Shortcut List
 
-> Run `post_install.sh` to set below commands automatically :joy:
+> Run `post_install.sh` to set shortcut keys for below custom commands automatically.
 
 - Disable Mouse Scroll
     ```gnome-terminal -- pkill imwheel```
