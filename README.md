@@ -34,6 +34,9 @@
 ## Themes & Icons Links
 
 
+ - Installer [Ocs-url](https://www.opendesktop.org/p/1136805/)
+ > :warning: Download and install it before going to next step
+
  - Theme [Sweet v40](https://www.gnome-look.org/p/1253385)
  - Icons [Candy icon](https://www.gnome-look.org/p/1305251)
  - Cursor [Oreo Cursor](https://www.gnome-look.org/p/1360254)
