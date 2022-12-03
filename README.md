@@ -25,36 +25,34 @@
   ./install.sh
 ```
 
-
-## Screeshots :
-
-<img src="desktop.png">
-<img src="terminal.png">
-
 ## Themes & Icons Links
 
-
- - Installer [Ocs-url](https://www.opendesktop.org/p/1136805/)
- > :warning: Download and install it before going to next step
+ - Installer [ocs-url](https://www.opendesktop.org/p/1136805/)
+ > :warning: Download and install *ocs-url* before going to next step
 
  - Theme [Sweet v40](https://www.gnome-look.org/p/1253385)
  - Icons [Candy icon](https://www.gnome-look.org/p/1305251)
  - Cursor [Oreo Cursor](https://www.gnome-look.org/p/1360254)
 
+## Screeshots :
+
+<img src="screenshots/desktop.png">
+<img src="screenshots/terminal.png">
+
+## Terminal
+[Terminal Settings](screenshots/terminal)
 
 ## Custom Shortcuts
-[Commands List](shortcuts)
-
+[Commands List](screenshots/shortcuts)
 
 ## Gnome Extensions
-[Extensions List](extensions)
+[Extensions List](screenshots/extensions)
 
 ## More projects :
 
  - [Virtual Assistant](https://github.com/vishal2376/virtual-assistant)
  - [C++ Mini Projects](https://github.com/vishal2376/cpp-mini-projects)
  - [Telegram Bot](https://github.com/vishal2376/telegram-bot)
-
 
 ## Contacts :
 
