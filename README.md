@@ -38,7 +38,6 @@
  - Icons [Candy icon](https://www.gnome-look.org/p/1305251)
  - Cursor [Oreo Cursor](https://www.gnome-look.org/p/1360254)
 
-> Install after script complete
 
 ## Custom Shortcuts
 [Command List](shortcuts)
