@@ -19,7 +19,7 @@ source ~/.cache/wal/colors-tty.sh
 . "${HOME}/.cache/wal/colors.sh"
 
 # Create the alias.
-alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "JetBrains Mono"'
+alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "JesBrains Mono"'
 
 export LC_ALL=en_US.utf8
 export PATH=$PATH:/usr/local/go/bin
@@ -151,7 +151,11 @@ vid(){
 }
 
 yt(){
-  yt-dlp -f 'bestvideo[height<=1080]+ba' $1 -o '~/Videos/YT-Downloads/%(channel)s/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s'
+  yt-dlp -f 'bestvideo[height<=1080]+ba' $1 -o '~/Videos/YT-Downloads/%(channel)s/%(playlist|Videos)s/%(playlist_index)s. %(title)s.%(ext)s'
+}
+
+playlist(){
+  yt-dlp -f 'bestvideo[height<=1080]+ba' $1 -o '~/Videos/YT-Downloads/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s'
 }
 
 song(){
@@ -177,3 +181,4 @@ cd() {
         fi
     fi
 }
+export PATH=$PATH:/home/vishal/.spicetify
