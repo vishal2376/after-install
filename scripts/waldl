@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
 # https://github.com/pystardust/waldl
 # script to find and download wallpapers from wallhaven
 version="0.0.1"
