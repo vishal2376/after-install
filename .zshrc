@@ -151,11 +151,11 @@ vid(){
 }
 
 yt(){
-  yt-dlp -f 'bestvideo[height<=1080]+ba' $1 -o '~/Videos/YT-Downloads/%(channel)s/%(playlist|Videos)s/%(playlist_index|)s%(playlist_index&. |)s%(title)s.%(ext)s'
+  yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o '~/Videos/YT-Downloads/%(channel)s/%(playlist|Videos)s/%(playlist_index|)s%(playlist_index&. |)s%(title)s.%(ext)s'
 }
 
 playlist(){
-  yt-dlp -f 'bestvideo[height<=1080]+ba' $1 -o '~/Videos/YT-Downloads/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s'
+  yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o '~/Videos/YT-Downloads/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s'
 }
 
 song(){
