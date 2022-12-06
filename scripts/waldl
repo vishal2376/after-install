@@ -36,7 +36,7 @@ atleast=1920x1080
 
 # the menu command used when no query is provided
 sh_menu () {
-	: | dmenu -fn "JetBrainsMono:size=15" -p "Search wallpaper : "
+	: | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn 'JetBrains Mono:size=14' -p "Search wallpaper : "
 	# ROFI: comment the previous line and uncomment the next line for rofi
 	# rofi -dmenu -l 0 -p "search wallpapers"
 }
