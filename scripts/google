@@ -1,11 +1,12 @@
 #!/bin/bash
 
-query=$(: | dmenu -fn 'JetBrains Mono:size=14' -p "Search : " | tr ' ' '+' | head -n 1) 
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
 
-if [ "$query" == "" ]
-then
-exit 0
-fi
-brave-browser "https://www.google.com/search?q=$query"
-exit 0
+#Get query
+query=$(: | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn 'JetBrains Mono:size=14' -p "Search on Google : " | tr ' ' '+' | head -n 1) 
 
+#Search if query is not empty
+[[ -z "$query" ]] || brave-browser "https://www.google.com/search?q=$query"
+
+exit 0
