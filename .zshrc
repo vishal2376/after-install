@@ -19,7 +19,7 @@ source ~/.cache/wal/colors-tty.sh
 . "${HOME}/.cache/wal/colors.sh"
 
 # Create the alias.
-alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "JesBrains Mono"'
+alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "PatrickHand:size=13"'
 
 export LC_ALL=en_US.utf8
 export PATH=$PATH:/usr/local/go/bin
@@ -182,3 +182,8 @@ cd() {
     fi
 }
 export PATH=$PATH:/home/vishal/.spicetify
+
+if [ -f /etc/bash.command-not-found ]; then
+    . /etc/bash.command-not-found
+fi
+

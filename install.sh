@@ -60,7 +60,8 @@ sudo apt-get install fonts-firacode fonts-font-awesome -y
 echo "\n----------Installing system tweaking tools----------\n"
 sudo apt-get install gnome-tweaks chrome-gnome-shell gnome-shell-extension-manager -y
 
-
+echo "\n----------Installing Bash Insulter-------------------\n"
+sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/hkbakke/bash-insulter/master/src/bash.command-not-found
 
 ##############################
 #    Installing github-cli   #
