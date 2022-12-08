@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# video dir path
+vid_dir="/mnt/ECHO/Videos/YT-Downloads"
+
+# file or folder to play
+eval mpv $(find $vid_dir | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn 'PatrickHand:size=13' -p "Watch : " -i -l 10 | sed 's/ /\\ /g')
