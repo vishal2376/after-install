@@ -19,7 +19,7 @@ source ~/.cache/wal/colors-tty.sh
 . "${HOME}/.cache/wal/colors.sh"
 
 # Create the alias.
-alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "PatrickHand:size=13"'
+alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn "PatrickHand:size=14"'
 
 export LC_ALL=en_US.utf8
 export PATH=$PATH:/usr/local/go/bin
@@ -163,7 +163,7 @@ song(){
 }
 
 ht(){
-  $(history | cut -c 1-7 --complement| sort -u | dmenu -l 10 -p "Search History : ")
+  history | sort -u -r | cut -c 8- | dmenu -l 10 -p "Search History : " | xclip -sel c -r
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
