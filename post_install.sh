@@ -34,6 +34,7 @@ echo "\n---------Adding custom shortcuts--------------\n"
 ./scripts/set_shortcut.py 'Google Search' 'google' '<Super>g'
 ./scripts/set_shortcut.py 'Youtube Search' 'youtube' '<Super>y'
 ./scripts/set_shortcut.py 'Watch Videos' 'watch-videos' '<Super>v'
+./scripts/set_shortcut.py 'Search on Leetcode' 'leetcode' '<Super>s'
 ./scripts/set_shortcut.py 'Discord' 'discord' '<Super><Shift>d'
 ./scripts/set_shortcut.py 'Kill Application' 'xkill' '<Super>Escape'
 ./scripts/set_shortcut.py 'Telegram' 'telegram-desktop' '<Super><Shift>c'
