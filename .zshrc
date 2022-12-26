@@ -135,7 +135,8 @@ export PAGER="most"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias wallpaper="cd ~/.local/share/wallhaven; ls -t | sxiv -i -o ."
 alias open-project="nohup env GDK_SCALE=2 GDK_DPI_SCALE=0.5 /home/vishal/Unity/Hub/Editor/2021.3.5f1/Editor/Unity -projectPath $1 >/dev/null 2>&1 &"
-
+alias rr='ranger'
+alias vim='nvim'
 td(){
   TOTAL=0
   for f in *.webm ; do ffprobe -v quiet -print_format json -show_format $f | jq -r '.format.duration';done | while read line ; do TOTAL=$(( $TOTAL+$line )); done
@@ -181,7 +182,6 @@ cd() {
         fi
     fi
 }
-export PATH=$PATH:/home/vishal/.spicetify
 
 if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
