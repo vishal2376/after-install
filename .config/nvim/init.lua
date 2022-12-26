@@ -11,6 +11,12 @@ require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
 
+  -- Nerdtree 
+  use 'preservim/nerdtree'
+
+  -- Icons for Nerdtree
+  use 'ryanoasis/vim-devicons'
+
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     requires = {
@@ -117,12 +123,13 @@ vim.o.undofile = true
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 
--- Tab Spaces
+-- Tab Spaces and scroll
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
 vim.o.smartcase = true
 vim.o.expandtab = true
+vim.o.scrolloff = 10
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -133,8 +140,8 @@ vim.o.termguicolors = true
 vim.cmd [[colorscheme dracula]]
 
 -- Transparent Background
-vim.api.nvim_set_hl(0,"Normal",{ bg = "none"})
-vim.api.nvim_set_hl(0,"NormalFloat",{ bg = "none"})
+--vim.api.nvim_set_hl(0,"Normal",{ bg = "none"})
+--vim.api.nvim_set_hl(0,"NormalFloat",{ bg = "none"})
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
@@ -167,6 +174,9 @@ if true then
   vim.keymap.set("v","K",":m '<-2<CR>gv=gv")
 end
 
+-- Nerdtree Keymaps
+   vim.keymap.set("n","<leader>n",":NERDTreeFocus<CR>")
+   vim.keymap.set("n","<C-n>",":NERDTreeToggle<CR>")
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -185,8 +195,8 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'dracula',
-    component_separators = '|',
-    section_separators = '',
+    component_separators = { left = '|', right = '|'},
+    section_separators = { left = '', right = ''},
   },
 }
 
@@ -448,6 +458,3 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
