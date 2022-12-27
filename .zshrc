@@ -164,7 +164,7 @@ song(){
 }
 
 ht(){
-  history | sort -u -r | cut -c 8- | dmenu -l 10 -p "Search History : " | xclip -sel c -r
+  history | sort -r | cut -c 8- | sort -u | dmenu -l 10 -p "Search History : " | xclip -sel c -r
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
