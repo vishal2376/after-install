@@ -1,0 +1,151 @@
+[
+  {
+    "name": "ECHO",
+    "icon": "appium-desktop",
+    "shortcut": "<Primary>space",
+    "centered": false,
+    "id": 0,
+    "children": [
+      {
+        "name": "Brave",
+        "icon": "brave-browser",
+        "type": "Shortcut",
+        "data": {
+          "shortcut": "<Super>w"
+        },
+        "angle": -1
+      },
+      {
+        "name": "Favourite",
+        "icon": "distributor-logo-ubuntu-budgie",
+        "type": "CustomMenu",
+        "children": [
+          {
+            "name": "Blender",
+            "icon": "/snap/blender/3132/meta/gui/icon.svg",
+            "type": "Command",
+            "data": {
+              "command": "env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/blender_blender.desktop /snap/bin/blender %f"
+            },
+            "angle": -1
+          },
+          {
+            "name": "Android Studio",
+            "icon": "/opt/android-studio/bin/studio.svg",
+            "type": "Command",
+            "data": {
+              "command": "\"/opt/android-studio/bin/studio.sh\" %f"
+            },
+            "angle": -1
+          },
+          {
+            "name": "Sublime Text",
+            "icon": "sublime-text",
+            "type": "Command",
+            "data": {
+              "command": "/opt/sublime_text/sublime_text %F"
+            },
+            "angle": -1
+          },
+          {
+            "name": "Unity Hub",
+            "icon": "unityhub",
+            "type": "Command",
+            "data": {
+              "command": "/opt/unityhub/unityhub %U"
+            },
+            "angle": -1
+          }
+        ],
+        "angle": -1,
+        "data": {}
+      },
+      {
+        "name": "System",
+        "icon": "flypie-menu-system-symbolic-#69b",
+        "type": "System",
+        "angle": -1,
+        "data": {}
+      },
+      {
+        "name": "Close",
+        "icon": "dialog-close",
+        "type": "Shortcut",
+        "data": {
+          "shortcut": "<Super>c"
+        },
+        "angle": -1
+      },
+      {
+        "name": "Sound",
+        "icon": "appimagekit-odio",
+        "children": [
+          {
+            "name": "Next Title",
+            "icon": "flypie-multimedia-next-symbolic-#853",
+            "type": "Shortcut",
+            "data": "AudioNext",
+            "angle": -1
+          },
+          {
+            "name": "Play / Pause",
+            "icon": "flypie-multimedia-playpause-symbolic-#853",
+            "type": "Shortcut",
+            "data": "AudioPlay",
+            "angle": -1
+          },
+          {
+            "name": "Previous Title",
+            "icon": "flypie-multimedia-previous-symbolic-#853",
+            "type": "Shortcut",
+            "data": "AudioPrev",
+            "angle": -1
+          }
+        ],
+        "type": "CustomMenu",
+        "data": {},
+        "angle": -1
+      },
+      {
+        "name": "Social Apps",
+        "icon": "electron3",
+        "type": "CustomMenu",
+        "children": [
+          {
+            "name": "Discord",
+            "icon": "discord",
+            "type": "Command",
+            "data": {
+              "command": "/usr/share/discord/Discord"
+            },
+            "angle": -1
+          },
+          {
+            "name": "Whatsapp",
+            "icon": "whatsapp",
+            "type": "Uri",
+            "data": {
+              "uri": "https://web.whatsapp.com/"
+            },
+            "angle": -1
+          },
+          {
+            "name": "Telegram Desktop",
+            "icon": "org.telegram.desktop",
+            "type": "Command",
+            "data": {
+              "command": "env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/telegram-desktop_telegram-desktop.desktop /snap/bin/telegram-desktop -- %u"
+            },
+            "angle": -1
+          }
+        ],
+        "angle": -1,
+        "data": {}
+      }
+    ],
+    "type": "CustomMenu",
+    "data": {},
+    "touchButton": false,
+    "superRMB": true
+  }
+]
