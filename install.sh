@@ -197,3 +197,4 @@ echo "\n----------[TODO] : Set custom shortcut keys(see 'shortcut' folder for re
 echo "\n----------[TODO] : Edit mount option[set to manually] of ECHO Drive----------"
 echo "\n----------[TODO] : After mounting, create a symbolic link of documents(ln -S /mnt/ECHO/Documents ~)----------"
 echo "\n----------[TODO] : Integerate CF and CC calender with system calender----------"
+echo "\n----------[TODO] : Import Fly Pie extension configuration----------"
