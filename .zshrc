@@ -148,11 +148,12 @@ pdf(){
 }
 
 vid(){
-  eval mpv $(find ~/Videos/ | dmenu -p "Watch : " -i -l 10 | sed 's/ /\\ /g')
+  eval mpv $(find ~/Videos/ | dmenu -p "Watch : " -i -l 10 | sed -E 's/([^a-zA-Z0-9_/])/\\\1/g')
 }
 
 yt(){
   yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o '~/Videos/YT-Downloads/%(channel)s/%(playlist|Videos)s/%(playlist_index|)s%(playlist_index&. |)s%(title)s.%(ext)s'
+  notify-send "Download Completed"
 }
 
 playlist(){
