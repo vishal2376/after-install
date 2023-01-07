@@ -1,0 +1,24 @@
+<snippet>
+	<content><![CDATA[
+#include<bits/stdc++.h>
+using namespace std;
+
+${1:int findComplement(int num)} 
+{
+	
+}
+
+
+int main()
+{
+
+	${2:}// vector<int> nums{ -1, 0, 3, 5, 9, 12};
+
+	${1:int findComplement(int num)};
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>leetcode</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.cpp</scope> -->
+</snippet>
