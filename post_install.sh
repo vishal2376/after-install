@@ -44,3 +44,6 @@ echo "\n---------Adding custom shortcuts--------------\n"
 echo "\n---------Activating tlp--------------\n"
 sudo systemctl enable tlp.service
 sudo tlp start
+
+echo "\n---------Activating preload--------------\n"
+sudo preload
