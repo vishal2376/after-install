@@ -46,7 +46,7 @@ sudo apt-get install onefetch -y
 
 echo "\n\n----------Installing basic tools----------\n"
 sudo apt-get install sed git jq grep openssl aria2 most imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
-sudo apt install libinput-tools libinih-dev libxdo-dev astyle adb preload stacer breeze -y
+sudo apt install libinput-tools libinih-dev libxdo-dev astyle adb preload stacer breeze libssl-dev pkg-config -y
 
 echo "\n----------Installing programming tools----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
