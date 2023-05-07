@@ -45,7 +45,7 @@ sudo apt-get install onefetch -y
 #############################
 
 echo "\n\n----------Installing basic tools----------\n"
-sudo apt-get install sed git jq grep openssl vim aria2 most imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
+sudo apt-get install sed git jq grep openssl aria2 most imwheel coreutils coreutils fzf xdg-utils suckless-tools dmenu -y
 sudo apt install libinput-tools libinih-dev libxdo-dev astyle adb tlp preload stacer breeze -y
 
 echo "\n----------Installing programming tools----------\n"
@@ -129,8 +129,7 @@ echo "\n----------Copying fonts & system extensions----------\n"
 cp -vr .local ~
 
 echo "\n----------Copying *rc files----------\n"
-cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile .vimrc .gitconfig ~
-cp -vr .vim ~
+cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile .gitconfig ~
 
 
 
