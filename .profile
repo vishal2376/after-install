@@ -30,3 +30,8 @@ fi
 #mouse scroll
 #imwheel &
 
+change-wallpaper
+
+export GTK_THEME=Lavanda-Dark
+
+. "$HOME/.cargo/env"
