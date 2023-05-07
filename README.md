@@ -67,7 +67,7 @@ Install dependencies and copy config files
 
 <img src="screenshots/desktop.png">
 <img src="screenshots/terminal.png">
-<img src="screenshots/vim.png">
+<img src="screenshots/nvim.png">
 
 ## More projects :
 
