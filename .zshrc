@@ -133,7 +133,7 @@ export PAGER="most"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias wallpaper="cd ~/.local/share/wallhaven; ls -t | sxiv -i -o ."
+alias wallpaper="sxiv -ot ~/.local/share/wallhaven"
 alias open-project="nohup env GDK_SCALE=2 GDK_DPI_SCALE=0.5 /home/vishal/Unity/Hub/Editor/2021.3.5f1/Editor/Unity -projectPath $1 >/dev/null 2>&1 &"
 alias rr='ranger'
 alias vim='nvim'
