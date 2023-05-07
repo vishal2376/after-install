@@ -129,7 +129,7 @@ echo "\n----------Copying fonts & system extensions----------\n"
 cp -vr .local ~
 
 echo "\n----------Copying *rc files----------\n"
-cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile .gitconfig ~
+cp .bashrc .zshrc .imwheelrc .p10k.zsh .profile ~
 
 
 
