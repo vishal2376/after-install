@@ -44,6 +44,7 @@ Install dependencies and copy config files
  - GTK Theme [Lavanda - Dark](https://www.gnome-look.org/p/1944780)
  - Icons [Tela Circle - Dracula](https://www.gnome-look.org/p/1359276)
  - Cursor [Bibata - Dodger Blue](https://www.gnome-look.org/p/1269768)
+ - Sounds [Mac OS](https://github.com/lucagoc/MacOSSounds4Gnome)
  - GRUB Theme [Dedsec - Legion](https://gitlab.com/VandalByte/dedsec-grub-theme)
 <br>
  
