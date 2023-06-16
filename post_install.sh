@@ -34,6 +34,7 @@ echo "\n---------Adding custom shortcuts--------------\n"
 ./scripts/set_shortcut.py 'Watch Videos' 'watch-videos' '<Super>v'
 ./scripts/set_shortcut.py 'Search on Leetcode' 'leetcode' '<Super>s'
 ./scripts/set_shortcut.py 'Discord' 'discord' '<Super><Shift>d'
+./scripts/set_shortcut.py 'Copy Screenshot' 'screenshot' '<Super><Shift>p'
 ./scripts/set_shortcut.py 'Kill Application' 'xkill' '<Super>Escape'
 ./scripts/set_shortcut.py 'Telegram' 'telegram-desktop' '<Super><Shift>c'
 ./scripts/set_shortcut.py 'Enable Mouse Scroll' 'mouse-scroll 3' '<Super><Shift>F12'
