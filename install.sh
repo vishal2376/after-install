@@ -47,7 +47,7 @@ sudo apt-get install sublime-text brave-browser mono-devel unityhub onefetch -y
 
 echo -e "\n---------- Installing basic tools ----------\n"
 sudo apt-get install sed git jq grep openssl aria2 most imwheel coreutils fzf xdg-utils suckless-tools -y
-sudo apt install libinput-tools libinih-dev libxdo-dev astyle adb preload breeze libssl-dev pkg-config -y
+sudo apt install libinput-tools libinih-dev libxdo-dev maim astyle adb preload breeze libssl-dev pkg-config -y
 
 echo -e "\n---------- Installing programming tools ----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
