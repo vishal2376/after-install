@@ -1,7 +1,25 @@
 #!/bin/sh
 
+WALLPAPER_DIR="$HOME/.local/share/wallhaven"
+USED_WALLPAPER_DIR="$HOME/.local/share/wallhaven_used"
+
+
+# create folders if not exist.
+[ -d "$WALLPAPER_DIR" ] || mkdir -p "$WALLPAPER_DIR"
+[ -d "$USED_WALLPAPER_DIR" ] || mkdir -p "$USED_WALLPAPER_DIR"
+
+# check if wallpaper dir is empty
+[ -z "$(ls -A $WALLPAPER_DIR)" ] && mv $USED_WALLPAPER_DIR/* $WALLPAPER_DIR
+
+
 if [ -z "$1" ]; then
-	wallpaper=$(find $HOME/.local/share/wallhaven -type f | shuf -n 1)
+	temp_wallpaper=$(find $WALLPAPER_DIR -type f | shuf -n 1)
+	file_name=$(basename $temp_wallpaper)
+
+	mv $temp_wallpaper $USED_WALLPAPER_DIR #move current wall to used wall folder 
+	
+	wallpaper="$USED_WALLPAPER_DIR/$file_name"
+
 elif echo "$1" | grep -q "/"; then
 	wallpaper="$1"
 else
