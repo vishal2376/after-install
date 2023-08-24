@@ -158,7 +158,12 @@ yt(){
   else
     yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(title)s.%(ext)s"
   fi
-    notify-send "Download Completed"
+  # Check if yt-dlp command was successful
+  if [ $? -eq 0 ]; then
+      notify-send "Download Complete" "The download has finished."
+  else
+      notify-send "Download Failed" "There was an error during the download."
+  fi
 }
 
 playlist(){
