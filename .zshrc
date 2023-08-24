@@ -152,8 +152,13 @@ vid(){
 }
 
 yt(){
-  yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o '~/Videos/YT-Downloads/%(channel)s/%(playlist|Videos)s/%(playlist_index|)s%(playlist_index&. |)s%(title)s.%(ext)s'
-  notify-send "Download Completed"
+  OUTPUT_DIR="$HOME/Videos/YT-Downloads"
+  if [[ $URL == *"playlist"* ]]; then
+    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(playlist|Videos)s/%(playlist_index|)s%(playlist_index&. |)s%(title)s.%(ext)s"
+  else
+    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(title)s.%(ext)s"
+  fi
+    notify-send "Download Completed"
 }
 
 playlist(){
