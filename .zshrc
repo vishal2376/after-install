@@ -153,7 +153,7 @@ vid(){
 
 yt(){
   OUTPUT_DIR="$HOME/Videos/YT-Downloads"
-  if [[ $URL == *"playlist"* ]]; then
+  if [[ $1 == *"playlist"* ]]; then
     yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(playlist|Videos)s/%(playlist_index|)s%(playlist_index&. |)s%(title)s.%(ext)s"
   else
     yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(title)s.%(ext)s"
