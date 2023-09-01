@@ -64,18 +64,19 @@ sudo apt-get install gnome-tweaks chrome-gnome-shell gnome-shell-extension-manag
 echo -e "\n---------- Installing Bash Insulter ----------\n"
 sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/hkbakke/bash-insulter/master/src/bash.command-not-found > /dev/null 2>&1
 
-echo -e "\n---------- Installing Flatpak ----------\n"
-sudo apt-get install flatpak -y
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+###################################
+# Remove Snap and install Flatpak #
+###################################
+git clone https://github.com/MasterGeekMX/snap-to-flatpak.git
+cd snap-to-flatpak
+chmod +x snap-to-flatpak.sh
+./snap-to-flatpak.sh
+cd -
 
-################################
-Installing Tools from Flatpak #
-################################
-
-echo -e "\n---------- Installing Development Apps ----------\n"
-sudo snap install blender --classic
-sudo snap install node --classic
-sudo snap install nvim --classic
+# echo -e "\n---------- Installing Development Apps ----------\n"
+# sudo snap install blender --classic
+# sudo snap install node --classic
+# sudo snap install nvim --classic
 
 
 #####################
