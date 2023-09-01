@@ -18,6 +18,8 @@ ln -s /mnt/ECHO/Videos ~
 ln -s /mnt/ECHO/Unity ~
 cp -r /mnt/ECHO/wallhaven ~/.local/share
 
+echo "\n---------Enable Minimize on click--------------\n"
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 echo "\n---------Change Wallpaper--------------\n"
 change-wallpaper
