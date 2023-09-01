@@ -64,10 +64,13 @@ sudo apt-get install gnome-tweaks chrome-gnome-shell gnome-shell-extension-manag
 echo -e "\n---------- Installing Bash Insulter ----------\n"
 sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/hkbakke/bash-insulter/master/src/bash.command-not-found > /dev/null 2>&1
 
+echo -e "\n---------- Installing Flatpak ----------\n"
+sudo apt-get install flatpak -y
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-##############################
-# Installing Tools from snap #
-##############################
+################################
+Installing Tools from Flatpak #
+################################
 
 echo -e "\n---------- Installing Development Apps ----------\n"
 sudo snap install blender --classic
@@ -144,8 +147,8 @@ echo -e "\n---------- Copying scripts ----------\n"
 sudo cp -vr scripts/* /usr/local/bin/
 
 echo -e "\n---------- Giving Permission to scripts ----------\n"
-sudo chmod -R +x /usr/local/bin
-sudo chmod -R +x ~/.config/sxiv/
+sudo chmod +x /usr/local/bin/*
+sudo chmod +x ~/.config/sxiv/*
 
 
 ########################
