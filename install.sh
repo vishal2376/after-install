@@ -64,6 +64,20 @@ sudo apt-get install gnome-tweaks chrome-gnome-shell gnome-shell-extension-manag
 echo -e "\n---------- Installing Bash Insulter ----------\n"
 sudo wget -O /etc/bash.command-not-found https://raw.githubusercontent.com/hkbakke/bash-insulter/master/src/bash.command-not-found > /dev/null 2>&1
 
+######################
+# Installing Node JS #
+######################
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+
+sudo apt-get update
+sudo apt-get install nodejs -y
+
 ###################################
 # Remove Snap and install Flatpak #
 ###################################
