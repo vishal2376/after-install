@@ -73,10 +73,11 @@ chmod +x snap-to-flatpak.sh
 ./snap-to-flatpak.sh
 cd -
 
-# echo -e "\n---------- Installing Development Apps ----------\n"
-# sudo snap install blender --classic
-# sudo snap install node --classic
-# sudo snap install nvim --classic
+
+# echo -e "\n---------- Installing Flatpak Apps ----------\n"
+flatpak install flathub com.github.taiko2k.tauonmb
+flatpak install flathub org.blender.Blender
+flatpak install flathub io.neovim.nvim
 
 
 #####################
