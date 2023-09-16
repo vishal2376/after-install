@@ -19,15 +19,11 @@ sudo apt-get install apt-transport-https curl net-tools -y
 echo -e "\n---------- Adding GPG Keys ----------\n"	
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null 2>&1
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg > /dev/null 2>&1
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF > /dev/null 2>&1
-wget -qO - https://hub.unity3d.com/linux/keys/public | sudo apt-key add - > /dev/null 2>&1
 sudo add-apt-repository ppa:o2sh/onefetch -y > /dev/null 2>&1
 
 echo -e "\n---------- Adding Repositories ----------\n"
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list > /dev/null
 echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list > /dev/null
-echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list > /dev/null
-sudo sh -c 'echo "deb https://hub.unity3d.com/linux/repos/deb stable main" > /etc/apt/sources.list.d/unityhub.list'
 
 echo -e "\n---------- Updating the sources ----------\n"
 sudo apt-get update
@@ -38,7 +34,7 @@ sudo apt-get update
 ###################################
 
 echo -e "\n---------- Installing apps from sources ----------\n"
-sudo apt-get install sublime-text brave-browser mono-devel unityhub onefetch -y
+sudo apt-get install sublime-text brave-browser onefetch -y
 
 
 #############################
