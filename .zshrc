@@ -1,5 +1,4 @@
 
-
 #------------------------------------------------
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
@@ -153,8 +152,8 @@ vid(){
 
 yt(){
   OUTPUT_DIR="$HOME/Videos/YT-Downloads"
-  if [[ $1 == *playlist* ]]; then
-    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(playlist|Videos)s/%(playlist_index|)s%(playlist_index&. |)s%(title)s.%(ext)s"
+  if [[ $1 == *list* ]]; then
+    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s"
   else
     yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(title)s.%(ext)s"
   fi
@@ -198,3 +197,7 @@ if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
 fi
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
