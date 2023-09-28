@@ -17,7 +17,7 @@ lspconfig.rust_analyzer.setup({
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = {"rust"},
-  root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+  root_dir = lspconfig.util.root_pattern("go.mod","go.work",".git"),
   settings = {
     ['rust-analyzer'] = {
       cargo = {
@@ -26,6 +26,22 @@ lspconfig.rust_analyzer.setup({
     }
   }
 }) 
+
+
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls"},
+  filetypes = {"go","gowork","gomod","gotmpl"},
+  root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+  settings = {
+    gopls = {
+      completeUnimported = true,
+      usePlaceholder = true
+    }
+  }
+}) 
+
 
 -- 
 -- lspconfig.pyright.setup { blabla}

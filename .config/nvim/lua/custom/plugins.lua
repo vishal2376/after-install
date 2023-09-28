@@ -11,6 +11,7 @@ local plugins = {
       -- format & linting
       {
         "jose-elias-alvarez/null-ls.nvim",
+        ft = "go",
         config = function()
           require "custom.configs.null-ls"
         end,
@@ -35,7 +36,8 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "rust-analyzer"
+        "rust-analyzer",
+        "gopls"
       }
     }
   },
