@@ -8,8 +8,8 @@ local highlights = require "custom.highlights"
 M.ui = {
   hl_override = highlights.override,
   hl_add = highlights.add,
-  theme = "tokyodark",
-  theme_toggle = {"tokyodark","everblush"},
+  theme = "catppuccin",
+  theme_toggle = {"catppuccin","everblush"},
   telescope = {
    style = "bordered"
   },

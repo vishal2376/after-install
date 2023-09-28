@@ -22,10 +22,22 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = {
+      ensure_installed = {
+        "rust-analyzer"
+      }
+    }
   },
 
   {
