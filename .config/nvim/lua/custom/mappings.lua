@@ -1,18 +1,21 @@
----@type MappingsTable
 local M = {}
 
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
+    ["<leader>tt"] = {
+      function ()
+        require("base46").toggle_transparency()
+      end
+    }
   },
 }
-
--- more keybinds!
+--- more keybinds!
 M.nvterm = {
   plugin = true,
 
   t = {
-    -- toggle in terminal mode
+     -- toggle in terminal mode
     ["<leader>ii"] = {
       function()
         require("nvterm.terminal").toggle "float"
@@ -77,3 +80,4 @@ M.nvterm = {
 }
 
 return M
+

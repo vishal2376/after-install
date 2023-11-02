@@ -1,30 +1,19 @@
 ---@type ChadrcConfig
 local M = {}
 
--- Path to overriding theme and highlights files
-local highlights = require "custom.highlights"
-
-
 M.ui = {
-  hl_override = highlights.override,
-  hl_add = highlights.add,
-  theme = "catppuccin",
-  theme_toggle = {"catppuccin","everblush"},
-  telescope = {
-   style = "bordered"
-  },
+  theme = "catppuccin", -- default theme
+  transparency = true,
+
+  telescope = { style = "bordered" }, -- borderless / bordered
+
   statusline = {
-    theme = "minimal",
-    separator_style = "default",
-  },
-  nvdash = {
-    load_on_startup = true
+    theme = "minimal", -- default/vscode/vscode_colored/minimal
   }
 }
 
 M.plugins = "custom.plugins"
 
--- check core.mappings for table structure
 M.mappings = require "custom.mappings"
 
 return M
