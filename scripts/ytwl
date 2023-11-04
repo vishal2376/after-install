@@ -1,0 +1,12 @@
+#!/bin/bash
+
+input_file="~/Downloads/youtube_links.txt"
+line_number=0
+total_lines=$(wc -l < "$input_file")
+
+while IFS= read -r line; do
+    ((line_number++))
+    clear
+    echo "[Download] Downloading item $line_number of $total_lines"
+    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters "$line" -o '~/Videos/YT-Downloads/Watch Later/%(title)s.%(ext)s'
+done < "$input_file"
