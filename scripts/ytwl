@@ -1,6 +1,16 @@
 #!/bin/bash
 
-input_file="~/Downloads/youtube_links.txt"
+# File Path
+input_file="$HOME/Downloads/youtube_links.txt"
+
+# Trap the Ctrl+C signal and call the terminate function
+terminate() {
+    echo "Script terminated by user."
+    exit 1
+}
+trap terminate SIGINT
+
+# Read Yt links and download it in a folder
 line_number=0
 total_lines=$(wc -l < "$input_file")
 
@@ -10,3 +20,12 @@ while IFS= read -r line; do
     echo "[Download] Downloading item $line_number of $total_lines"
     yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters "$line" -o '~/Videos/YT-Downloads/Watch Later/%(title)s.%(ext)s'
 done < "$input_file"
+
+if [ $? -eq 0 ]; then
+    notify-send "Download Complete" "The download has finished."
+  else
+    notify-send "Download Failed" "There was an error during the download."
+fi
+
+# Remove file
+rm "$input_file"
