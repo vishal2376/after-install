@@ -7,10 +7,26 @@ M.general = {
       function ()
         require("base46").toggle_transparency()
       end
-    }
+    },
+    ["<leader>fm"] = {":%!astyle --mode=c --style=ansi <CR>"},
   },
 }
 --- more keybinds!
+
+M.dap = {
+  plugin = true,
+  n = {
+    ["<leader>db"] = {
+      "<cmd> DapToggleBreakpoint <CR>",
+      "Add breakpoint at line",
+    },
+    ["<leader>dr"] = {
+      "<cmd> DapContinue <CR>",
+      "Start or continue the debugger",
+    }
+  }
+}
+
 M.nvterm = {
   plugin = true,
 
@@ -23,7 +39,7 @@ M.nvterm = {
       "toggle floating term",
     },
 
-    ["<leader>hh"] = {
+    ["<C-s>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
