@@ -9,6 +9,7 @@ M.general = {
       end
     },
     ["<leader>fm"] = {":%!astyle --mode=c --style=ansi <CR>"},
+    ["<leader>rw"] = {":%s/\\<<C-r><C-w>\\>//g<Left><Left>"},
   },
 }
 --- more keybinds!
