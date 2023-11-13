@@ -2,14 +2,14 @@
 local M = {}
 
 M.ui = {
-  theme = "catppuccin", -- default theme
-  transparency = false,
+    theme = "catppuccin", -- default theme
+    transparency = false,
 
-  telescope = { style = "bordered" }, -- borderless / bordered
+    telescope = { style = "bordered" }, -- borderless / bordered
 
-  statusline = {
-    theme = "minimal", -- default/vscode/vscode_colored/minimal
-  }
+    statusline = {
+        theme = "minimal", -- default/vscode/vscode_colored/minimal
+    }
 }
 
 M.plugins = "custom.plugins"
