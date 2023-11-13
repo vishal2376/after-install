@@ -27,24 +27,30 @@ end
 -- Run Python files
 vim.api.nvim_exec([[
   autocmd FileType python command! RunPython !python3 %
-  autocmd FileType python command! RunPythonTerminal !gnome-terminal -- python3 %
   autocmd FileType python nnoremap <buffer> <F5> :RunPython<CR>
+  
+  autocmd FileType python command! RunPythonTerminal !gnome-terminal -- python3 %
   autocmd FileType python nnoremap <buffer> <C-b> :RunPythonTerminal<CR>
 ]], false)
 
 -- Run C++ files
 vim.api.nvim_exec([[
   autocmd FileType cpp command! RunCpp !g++ % -o %< && ./%<
-  autocmd FileType cpp command! RunCppTerminal !gnome-terminal -- g++ % -o %< && ./%<
   autocmd FileType cpp nnoremap <buffer> <F5> :RunCpp<CR>
+  
+  autocmd FileType cpp command! RunCppTerminal !gnome-terminal -- g++ % -o %< && ./%<
   autocmd FileType cpp nnoremap <buffer> <C-b> :RunCppTerminal<CR>
+  
+  autocmd FileType cpp command! FormatCpp %!astyle --mode=c --style=ansi
+  autocmd FileType cpp nnoremap <buffer> <leader>fm :FormatCpp<CR>
 ]], false)
 
 -- Run Rust files
 vim.api.nvim_exec([[
   autocmd FileType rust command! RunRust !cargo run
-  autocmd FileType rust command! RunRustTerminal !gnome-terminal -- cargo run
   autocmd FileType rust nnoremap <buffer> <F5> :RunRust<CR>
+  
+  autocmd FileType rust command! RunRustTerminal !gnome-terminal -- cargo run
   autocmd FileType rust nnoremap <buffer> <C-b> :RunRustTerminal<CR>
 ]], false)
 

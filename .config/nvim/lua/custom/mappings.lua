@@ -2,16 +2,39 @@ local M = {}
 
 M.general = {
     n = {
+        -- : shortcut
         [";"] = { ":", "enter command mode", opts = { nowait = true } },
+
+        -- toggle transparency
         ["<leader>tt"] = {
             function ()
                 require("base46").toggle_transparency()
             end
         },
-        ["<leader>fm"] = {":%!astyle --mode=c --style=ansi <CR>"},
+
+        -- move line up/down
+        ["<C-S-Up>"] = {"dd2kp"},
+        ["<C-S-Down>"] = {"ddp"},
+
+        -- rename all words
         ["<leader>rw"] = {":%s/\\<<C-r><C-w>\\>//g<Left><Left>"},
-        ["<leader>\""] = {"ciw\"\"<ESC><Left>p"},
     },
+
+    i = {
+        -- delete word
+        ["<C-BS>"] = {"<ESC> dbi"},
+
+        -- move line up/down
+        ["<C-S-Up>"] = {"<ESC>dd2kp"},
+        ["<C-S-Down>"] = {"<ESC>ddp"},
+    },
+
+    v = {
+        -- add symbols ()""{} around selection
+        ["\""] = {"c\"<C-r>\"\"",opts = { nowait = true }},
+        ["{"] = {"c{<C-r>\"}",opts = { nowait = true }},
+        ["("] = {"c(<C-r>\")",opts = { nowait = true }},
+    }
 }
 --- more keybinds!
 
