@@ -8,4 +8,12 @@ opt.softtabstop = 4
 -- Numbers
 opt.relativenumber = true
 
+-- Font
+opt.guifont = "JetBrainsMono Nerd Font:h15"
+
+-- Neovide Settings
+if vim.g.neovide then
+    -- vim.g.neovide_transparency = 0.9
+    vim.g.neovide_cursor_vfx_mode = "railgun"
+end
 
