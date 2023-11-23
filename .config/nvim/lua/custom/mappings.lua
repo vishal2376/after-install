@@ -18,6 +18,9 @@ M.general = {
 
         -- rename all words
         ["<leader>rw"] = {":%s/\\<<C-r><C-w>\\>//g<Left><Left>"},
+
+        -- open gnome terminal
+        ["<leader>b"] = {"<cmd> !gnome-terminal --working-directory=$(pwd) & <CR> <CR>"},
     },
 
     i = {
@@ -64,7 +67,7 @@ M.nvterm = {
             "toggle floating term",
         },
 
-        ["<C-s>"] = {
+        ["<leader>hh"] = {
             function()
                 require("nvterm.terminal").toggle "horizontal"
             end,
