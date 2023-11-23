@@ -39,7 +39,12 @@ M.general = {
         ["("] = {"c(<C-r>\")",opts = { nowait = true }},
     }
 }
---- more keybinds!
+
+M.projects = {
+  n = {
+    ["<leader>fp"] = { "<cmd> ProjectMgr<CR>", "Open Projects"}
+    },
+}
 
 M.dap = {
     plugin = true,

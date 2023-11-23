@@ -42,7 +42,7 @@ vim.api.nvim_exec([[
 
   autocmd FileType cpp command! RunCppTerminal !gnome-terminal -- g++ % -o %< && ./%<
   autocmd FileType cpp nnoremap <buffer> <C-b> :RunCppTerminal<CR>
-  
+
   autocmd FileType cpp command! FormatCpp %!astyle --mode=c --style=ansi
   autocmd FileType cpp nnoremap <buffer> <leader>fm :FormatCpp<CR>
 ]], false)
