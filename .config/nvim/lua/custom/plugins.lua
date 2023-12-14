@@ -18,18 +18,16 @@ local plugins = {
         end,
     },
 
-    -- projects manager
+    -- cmd,message-notify ui
     {
-        "charludo/projectmgr.nvim",
-        lazy = false, -- important!
-        config = function()
-            require("projectmgr").setup({
-                autogit = {
-                    enabled = true,
-                    command = "git pull --ff-only > .git/fastforward.log 2>&1",
-                },
-                session = { enabled = true, file = ".git/Session.vim" },
-            })
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+        opts = function ()
+            return require "custom.configs.noice"
         end,
     },
 
