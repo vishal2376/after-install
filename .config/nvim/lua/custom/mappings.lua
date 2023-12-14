@@ -12,6 +12,10 @@ M.general = {
             end
         },
 
+         -- select lines
+        ["<S-Up>"] = {"vk"},
+        ["<S-Down>"] = {"vj"},
+
         -- move line up/down
         ["<C-S-Up>"] = {"dd2kp"},
         ["<C-S-Down>"] = {"ddp"},
@@ -24,12 +28,18 @@ M.general = {
     },
 
     i = {
+
+
         -- delete word
         ["<C-BS>"] = {"<ESC> dbi"},
 
         -- move line up/down
         ["<C-S-Up>"] = {"<ESC>dd2kp"},
         ["<C-S-Down>"] = {"<ESC>ddp"},
+
+        -- select lines
+        ["<S-Up>"] = {"<ESC> vk"},
+        ["<S-Down>"] = {"<ESC> vj"},
     },
 
     v = {
@@ -37,6 +47,9 @@ M.general = {
         ["\""] = {"c\"<C-r>\"\"",opts = { nowait = true }},
         ["{"] = {"c{<C-r>\"}",opts = { nowait = true }},
         ["("] = {"c(<C-r>\")",opts = { nowait = true }},
+
+        -- delete selected lines
+        ["<BS>"] = {"c",opts = {nowait = true}}
     }
 }
 
