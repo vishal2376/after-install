@@ -25,6 +25,10 @@ M.general = {
 
         -- open gnome terminal
         ["<leader>b"] = {"<cmd> !gnome-terminal --working-directory=$(pwd) & <CR> <CR>"},
+
+        -- open/save last session
+        ["<F2>"]  = {"<cmd> source ~/.vim_session <CR>" ,"Load Session"},
+        ["<F3>"]  = {"<cmd> mksession! ~/.vim_session <CR>" ,"Save session"},
     },
 
     i = {
