@@ -134,6 +134,7 @@ fi
 alias zc="nvim ~/.zshrc"
 alias wallpaper="sxiv -ot ~/.local/share/wallhaven"
 alias vim='neovide --size=1920x1080'
+alias rr='dev rust && vim src/main.rs'
 
 # dev rust/python => open selected rust/python project in nvim
 dev() {
@@ -145,9 +146,8 @@ dev() {
     elif [[ $1 == "python" ]]; then
         dev_dir="$base_dir/python/"
     fi
-    
+
     cd "$dev_dir$(find $dev_dir -maxdepth 1 -type d | awk -F'/' '{print $6}' | fzf)"
-    vim
 }    
 
 # td mkv => find total time of all mkv files in working dir
