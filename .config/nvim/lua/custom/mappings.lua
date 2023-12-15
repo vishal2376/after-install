@@ -33,6 +33,8 @@ M.general = {
 
     i = {
 
+        -- save file
+        ["<C-s>"] = {"<ESC> <cmd> w <CR>","Save File"},
 
         -- delete word
         ["<C-BS>"] = {"<ESC> dbi"},
@@ -47,8 +49,7 @@ M.general = {
     },
 
     v = {
-        -- add symbols ()""{} around selection
-        ["\""] = {"c\"<C-r>\"\"",opts = { nowait = true }},
+        -- add symbols (){} around selection
         ["{"] = {"c{<C-r>\"}",opts = { nowait = true }},
         ["("] = {"c(<C-r>\")",opts = { nowait = true }},
 
