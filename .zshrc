@@ -26,7 +26,7 @@ export PATH=$PATH:/usr/local/go/bin
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -115,11 +115,11 @@ export PAGER="most"
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+    export EDITOR='vim'
+else
+    export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -130,56 +130,89 @@ export PAGER="most"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zc="nvim ~/.zshrc"
 alias wallpaper="sxiv -ot ~/.local/share/wallhaven"
-alias open-project="nohup env GDK_SCALE=2 GDK_DPI_SCALE=0.5 /home/vishal/Unity/Hub/Editor/2021.3.5f1/Editor/Unity -projectPath $1 >/dev/null 2>&1 &"
-alias rr='ranger'
-alias vim='nvim'
+alias vim='neovide --size=1920x1080'
+
+# dev rust/python => open selected rust/python project in nvim
+dev() {
+    base_dir="$HOME/Documents"
+    dev_dir="$base_dir/Rust/" 
+
+    if [[ $1 == "rust" ]]; then
+        dev_dir="$base_dir/Rust/" 
+    elif [[ $1 == "python" ]]; then
+        dev_dir="$base_dir/python/"
+    fi
+    
+    cd "$dev_dir$(find $dev_dir -maxdepth 1 -type d | awk -F'/' '{print $6}' | fzf)"
+    vim
+}    
+
+# td mkv => find total time of all mkv files in working dir
 td(){
-  TOTAL=0
-  for f in *.webm ; do ffprobe -v quiet -print_format json -show_format $f | jq -r '.format.duration';done | while read line ; do TOTAL=$(( $TOTAL+$line )); done
-  printf "%.2f hours\n" "$(($TOTAL/3600))"
+    TOTAL=0
+    for f in *.$1 ; do ffprobe -v quiet -print_format json -show_format $f | jq -r '.format.duration';done | while read line ; do TOTAL=$(( $TOTAL+$line )); done
+    printf "%.2f hours\n" "$(($TOTAL/3600))"
 }
 
+# open selected pdf
 pdf(){
-  eval xdg-open /mnt/ECHO/PDF/$(find /mnt/ECHO/PDF/ -type f -iname "*.pdf"| awk -F'/' '{print $5 "/" $6}'  | dmenu -p "Open PDF: " -l 15 -i | sed 's/ /\\ /g')
+    eval xdg-open /mnt/ECHO/PDF/$(find /mnt/ECHO/PDF/ -type f -iname "*.pdf"| awk -F'/' '{print $5 "/" $6}'  | dmenu -p "Open PDF: " -l 15 -i | sed 's/ /\\ /g')
 }
 
+# open selected video in mpv
 vid(){
-  eval mpv $(find ~/Videos/ | dmenu -p "Watch : " -i -l 10 | sed -E 's/([^a-zA-Z0-9_/])/\\\1/g')
+    eval mpv $(find ~/Videos/ | dmenu -p "Watch : " -i -l 10 | sed -E 's/([^a-zA-Z0-9_/])/\\\1/g')
 }
 
+# download yt video/playlist in 480p
+yt480(){
+    OUTPUT_DIR="$HOME/Videos/YT-Downloads"
+    if [[ $1 == *list* ]]; then
+        yt-dlp -f 'bestvideo[height<=480]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s"
+    else
+        yt-dlp -f 'bestvideo[height<=480]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(title)s.%(ext)s"
+    fi
+    # Check if yt-dlp command was successful
+    if [ $? -eq 0 ]; then
+        notify-send "Download Complete" "The download has finished."
+    else
+        notify-send "Download Failed" "There was an error during the download."
+    fi
+}
+
+# download yt video/playlist in 1080p
 yt(){
-  OUTPUT_DIR="$HOME/Videos/YT-Downloads"
-  if [[ $1 == *list* ]]; then
-    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s"
-  else
-    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(title)s.%(ext)s"
-  fi
-  # Check if yt-dlp command was successful
-  if [ $? -eq 0 ]; then
-      notify-send "Download Complete" "The download has finished."
-  else
-      notify-send "Download Failed" "There was an error during the download."
-  fi
+    OUTPUT_DIR="$HOME/Videos/YT-Downloads"
+    if [[ $1 == *list* ]]; then
+        yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s"
+    else
+        yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o "$OUTPUT_DIR/%(channel)s/%(title)s.%(ext)s"
+    fi
+    # Check if yt-dlp command was successful
+    if [ $? -eq 0 ]; then
+        notify-send "Download Complete" "The download has finished."
+    else
+        notify-send "Download Failed" "There was an error during the download."
+    fi
 }
 
-playlist(){
-  yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o '~/Videos/YT-Downloads/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s'
-}
-
+# download yt songs in mp3
 song(){
-  yt-dlp -f '140' --embed-thumbnail --add-metadata --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(playlist)s/%(title)s.%(ext)s'
+    yt-dlp -f '140' --embed-thumbnail --add-metadata --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(playlist)s/%(title)s.%(ext)s'
 }
 
+# search shell history
 ht(){
-  history | sort -r | cut -c 8- | sort -u | dmenu -l 10 -p "Search History : " | xclip -sel c -r
+    history | sort -r | cut -c 8- | sort -u | dmenu -l 10 -p "Search History : " | xclip -sel c -r
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Show Git Repo Stats
 LAST_REPO=""
 cd() { 
     builtin cd "$@";
@@ -187,8 +220,8 @@ cd() {
 
     if [ $? -eq 0 ]; then
         if [ "$LAST_REPO" != $(basename $(git rev-parse --show-toplevel)) ]; then
-        onefetch
-        LAST_REPO=$(basename $(git rev-parse --show-toplevel))
+            onefetch
+            LAST_REPO=$(basename $(git rev-parse --show-toplevel))
         fi
     fi
 }
