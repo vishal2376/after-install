@@ -199,6 +199,10 @@ yt(){
     fi
 }
 
+# download yt custom playlist
+playlist(){
+    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters $1 -o '~/Videos/YT-Downloads/%(playlist)s/%(playlist_index)s. %(title)s.%(ext)s'
+}
 # download yt songs in mp3
 song(){
     yt-dlp -f '140' --embed-thumbnail --add-metadata --extract-audio --audio-format mp3 --audio-quality 0 $1 -o '~/Music/%(playlist)s/%(title)s.%(ext)s'
