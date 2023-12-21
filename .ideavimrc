@@ -1,0 +1,26 @@
+"----------Plugins--------
+set NERDTree
+
+"----------Common--------
+set showmode
+set scrolloff=5
+set incsearch
+set relativenumber
+
+"--------Mappings--------
+let mapleader = " "
+
+nmap <leader>x :action CloseContent<CR>
+
+nmap <leader>e :NERDTreeFocus<CR>
+nmap <C-n> :NERDTreeToggle<CR>
+
+nmap <leader>h :action ActivateTerminalToolWindow<CR>
+nmap <leader>hh :action HideActiveWindow<CR>
+
+nmap <TAB> :action NextTab<CR>
+nmap <S-TAB> :action PreviousTab<CR>
+
+nmap <leader>ff :action GotoFile<CR>
+
+nmap <leader>gd :action GotoDeclaration<CR>
