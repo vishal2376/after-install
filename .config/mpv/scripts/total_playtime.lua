@@ -2,7 +2,7 @@
 --~ If number of items in playlist didn't change since last calculation - it doesn't probe files anew.
 --~ requires ffprobe (ffmpeg)
 
-key_binding = 'F12'
+key_binding = 't'
 -- save probed files for future reference -- ${fname} \t ${duration}
 save_probed = true
 saved_probed_filename = '~/.config/mpv/scripts/total_playtime.list'
@@ -21,6 +21,12 @@ function disp_time(time)
 	local seconds = math.floor(time % 60)
 	
 	return string.format("%02d:%02d:%02d", hours, minutes, seconds)
+end
+
+function disp_format_time(time)
+	local hours = math.floor(time/3600)
+	local minutes = math.floor((time % 3600)/60)
+    return string.format("Total Duration : %d hours and %d minutes",hours,minutes)
 end
 
 function setContains(set, key)
@@ -101,18 +107,20 @@ function total_time()
 		end
 	end
 
-	osdm = string.format(" %s / %s (%s%%) \n %s / %s (%.2fx) \n %s/%s",
+	osdm = string.format(" [Normal Speed]\n %s\n %s / %s (%s%% Completed) \n\n\n\n [%.2fx Speed]\n %s \n %s / %s  \n\n Playlist : %s/%s", 
+			disp_format_time(total_dur),
 			disp_time(played_dur),
 			disp_time(total_dur),
 			math.floor(played_dur*100/total_dur),
+			mp.get_property_number("speed"),
+			disp_format_time(total_dur/mp.get_property_number("speed")),
 			disp_time(played_dur/mp.get_property_number("speed")),
 			disp_time(total_dur/mp.get_property_number("speed")),
-			mp.get_property_number("speed"),
 			mp.get_property("playlist-pos-1"),
 			mp.get_property("playlist-count")
 		)
 	
-	mp.osd_message(osdm)
+	mp.osd_message(osdm,5)
 end
 
 mp.add_forced_key_binding(key_binding, "total_time", total_time)
@@ -168,7 +176,7 @@ function sort_playlist(start_0)
 		mp.set_property('playlist-pos', 0)
 		os.execute('sleep .1')
 	end
-	mp.osd_message(out, 3)
+	mp.osd_message(out, 5)
 end
 
 mp.add_forced_key_binding('KP4', "sort_playlist", sort_playlist)
