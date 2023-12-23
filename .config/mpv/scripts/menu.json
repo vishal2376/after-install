@@ -5,22 +5,22 @@
   },
   {
     "label": "Sort playlist",
-    "command": ["script-message", "playlistmanager", "sort"],
+    "command": ["script-message", "playlistmanager", "sort"]
   },
   {
     "label": "Sort playlist and start from first file",
-    "command": ["script-message", "playlistmanager", "sort", "true"],
+    "command": ["script-message", "playlistmanager", "sort", "true"]
   },
   {
     "label": "Reverse playlist",
-    "command": ["script-message", "playlistmanager", "reverse"],
+    "command": ["script-message", "playlistmanager", "reverse"]
   },
   {
     "label": "Shuffle playlist",
-    "command": ["script-message", "playlistmanager", "shuffle"],
+    "command": ["script-message", "playlistmanager", "shuffle"]
   },
   {
     "label": "Save playlist",
-    "command": ["script-message", "playlistmanager", "save"],
+    "command": ["script-message", "playlistmanager", "save"]
   }
 ]
