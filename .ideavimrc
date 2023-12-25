@@ -5,7 +5,6 @@ set NERDTree
 set showmode
 set scrolloff=5
 set incsearch
-set relativenumber
 
 "--------Mappings--------
 let mapleader = " "
@@ -21,6 +20,9 @@ nmap <leader>hh :action HideActiveWindow<CR>
 nmap <TAB> :action NextTab<CR>
 nmap <S-TAB> :action PreviousTab<CR>
 
-nmap <leader>ff :action GotoFile<CR>
+nmap <leader>/ :action CommentByLineComment<CR>
+nmap <leader>b :action ToggleLineBreakpoint<CR> 
+
+nmap <leader>f :action GotoFile<CR>
 
 nmap <leader>gd :action GotoDeclaration<CR>
