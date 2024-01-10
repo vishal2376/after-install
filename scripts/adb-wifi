@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# Check if ADB is installed
+if ! command -v adb > /dev/null; then
+    notify-send "ADB Wifi Failed" "Error: ADB not found. Please install Android Debug Bridge (ADB) and try again."
+    exit 1
+fi
+
+# Get device_id
+device_id=$(adb devices | awk 'NR==2 {print $1}')
+
+# Check if a device is connected
+if [ -z "$device_id" ]; then
+    notify-send "ADB Wifi Failed" "Error: No device found. Please connect a device and try again."
+    exit 1
+fi
+
+# Connect device on port 5555
+adb -s "$device_id" tcpip 5555
+
+sleep 1
+
+# Get ip address
+ip_addr=$(adb shell ip route | awk '{print $9}' | dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn 'JetBrains Mono:size=14' -l 10 -p "Select IP Address: ")
+
+# Check if IP address is obtained
+if [ -z "$ip_addr" ]; then
+    notify-send "ADB Wifi Failed" "Error: Unable to obtain IP address. Exiting."
+    exit 1
+fi
+
+# Connect to ip_addr
+adb connect "$ip_addr:5555"
+
+# Check if connection is successful
+if [ $? -eq 0 ]; then
+    notify-send "ADB Wifi Connected" "Successfully connected to $ip_addr:5555"
+else
+    notify-send "ADB Wifi Failed" "Error: Unable to connect to $ip_addr:5555. Please check the IP address and try again."
+    exit 1
+fi
