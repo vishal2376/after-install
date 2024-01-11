@@ -8,6 +8,32 @@ echo -e "\n---------- Updating system ----------\n"
 sudo apt-get update
 sudo apt-get upgrade -y
 
+######################################
+# Adding Repositories from websites  #
+######################################
+
+echo -e "\n---------- Installing basic tools ----------\n"
+sudo apt-get install apt-transport-https curl net-tools -y
+
+echo -e "\n---------- Adding GPG Keys ----------\n"	
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null 2>&1
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg > /dev/null 2>&1
+sudo add-apt-repository ppa:o2sh/onefetch -y > /dev/null 2>&1
+
+echo -e "\n---------- Adding Repositories ----------\n"
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list > /dev/null
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list > /dev/null
+
+echo -e "\n---------- Updating the sources ----------\n"
+sudo apt-get update
+
+###################################
+# Installing apps from repositories#
+###################################
+
+echo -e "\n---------- Installing apps from sources ----------\n"
+sudo apt-get install sublime-text brave-browser onefetch -y
+
 #############################
 # Installing Tools from apt #
 #############################
