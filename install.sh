@@ -20,7 +20,7 @@ echo -e "\n---------- Installing programming tools ----------\n"
 sudo apt-get install g++ clang clangd python3 python3-pip -y
 
 echo -e "\n---------- Installing multimedia tools ----------\n"
-sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick ubuntu-restricted-extras pulseaudio obs-studio kdenlive kdeconnect -y
+sudo apt-get install ffmpeg mpv sxiv gscan2pdf imagemagick ubuntu-restricted-extras pulseaudio ffmpegthumbnailer obs-studio kdenlive kdeconnect -y
 
 echo -e "\n---------- Installing fonts ----------\n"
 sudo apt-get install fonts-firacode fonts-font-awesome -y
