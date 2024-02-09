@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+
+import os
+import sys
+import time
+import pyautogui
+
+mobile_number = sys.argv[1]
+
+# Page1: Mobile number
+pyautogui.click(665,290) # agree checkbox
+pyautogui.click(921,246)
+pyautogui.write(mobile_number,interval=0.05)
+pyautogui.click(952,338) # login button
+
+# Page2: Confirm mobile
+time.sleep(1)
+pyautogui.click(952,338)
+
+# Page3: OTP
+time.sleep(1)
+otp = pyautogui.prompt("Enter OTP")
+time.sleep(1)
+pyautogui.click(873,346)
+pyautogui.write(otp)
+pyautogui.click(952,407)
+
+# Page4: Continue Browsing
+time.sleep(1)
+pyautogui.click(960,297)

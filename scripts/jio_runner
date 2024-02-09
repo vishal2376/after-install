@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Import the colors.
+. "${HOME}/.cache/wal/colors.sh"
+
+# Path to the mobile numbers file
+mobile_file="$HOME/.local/share/mobile_numbers.txt"
+
+# Create the file if it doesn't exist
+touch "$mobile_file"
+
+# Read mobile numbers from the file
+mobile_numbers=$(cat "$mobile_file")
+
+# Use dmenu to select a mobile number
+selected_mobile=$(dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn 'JetBrains Mono:size=14' -p "Select or enter a 10-digit mobile number:" -l 10 <<< "$mobile_numbers")
+
+# Check if a mobile number was selected and it is a 10-digit number
+if [[ -z "$selected_mobile" || ! "$selected_mobile" =~ ^[0-9]{10}$ ]]; then
+    notify-send "Invalid mobile number. Exiting."
+    exit 1
+fi
+
+# Check if the selected mobile number is not in the file
+if ! grep -q "$selected_mobile" "$mobile_file"; then
+    notify-send "Adding $selected_mobile to $mobile_file"
+    echo "$selected_mobile" >> "$mobile_file"
+fi
+
+# Run the ./jio script with the selected mobile number as an argument
+jio "$selected_mobile"
