@@ -3,6 +3,15 @@
 # File Path
 input_file="$HOME/Downloads/youtube_links.txt"
 
+#quality
+quality="1080"
+
+if [[ "$1" == "1080" || "$1" == "480" || "$1" == "720" || "$1" == "360" ]]; then
+    quality="$1"
+else
+    quality="1080"
+fi
+
 # Trap the Ctrl+C signal and call the terminate function
 terminate() {
     echo "Script terminated by user."
@@ -18,7 +27,7 @@ while IFS= read -r line; do
     ((line_number++))
     clear
     echo "[Download] Downloading item $line_number of $total_lines"
-    yt-dlp -f 'bestvideo[height<=1080]+ba' --add-chapters "$line" -o '~/Videos/YT-Downloads/Watch Later/%(title)s.%(ext)s'
+    yt-dlp -f "bestvideo[height<=$quality]+ba" --add-chapters "$line" -o '~/Videos/YT-Downloads/Watch Later/%(title)s.%(ext)s'
 done < "$input_file"
 
 if [ $? -eq 0 ]; then
