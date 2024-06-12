@@ -22,6 +22,7 @@ alias dmenu='dmenu -nb "$color0" -nf "$color15" -sb "$color1" -sf "$color15" -fn
 
 export LC_ALL=en_US.utf8
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/home/vishal/flutter/bin
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -234,6 +235,11 @@ if [ -f /etc/bash.command-not-found ]; then
     . /etc/bash.command-not-found
 fi
 
+source <(fzf --zsh)
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
